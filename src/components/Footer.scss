@@ -1,0 +1,82 @@
+.Foot {
+    display: grid;
+    grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
+    height: 200px;
+    align-items: center;
+    background-color: #3e4144;
+
+    .LogoFooter{
+        grid-column: 1 / 2;
+        margin-left: 30px;
+        height: 10vw;
+        align-content: center;
+        justify-items: center;
+
+    }
+
+    .Copyright {
+        justify-self: center;
+        align-self: flex-end;
+        margin-bottom: 30px;
+        text-align: center;
+        text-align: center;
+        size: 0.5em;
+        grid-column: 2;
+    }
+
+    .icons {
+        display: grid;
+        grid-column: 3;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 15px;
+        justify-self: flex-end;
+        margin-right: 50px;
+
+        .iconFacebook{
+            grid-column: 1;
+            width: 40px;
+        }
+
+        .iconTwitter {
+            grid-column: 2;
+            width: 40px;
+        }
+
+        .iconInstagram {
+            grid-column: 3;
+            width: 40px;
+        }
+
+    }
+
+}
+
+///////////////////////////////////// MOBILE ///////////////////////////////////
+
+@media (max-width: 640px) {
+
+    .Foot {
+        grid-template-rows: repeat(2,1fr);
+
+
+        .LogoFooter{
+            display: none;
+        }
+    
+        .Copyright {
+            grid-row: 2;
+            margin-bottom: 30px;
+            
+        }
+    
+        .icons {
+            grid-row: 1;
+            grid-column: 2;
+            justify-items: center;
+            margin-right: initial;
+            justify-self: initial;
+            }
+    
+    }
+    
+}

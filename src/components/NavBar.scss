@@ -1,0 +1,42 @@
+.contaner {
+
+    .LogoNav{
+        height: 10vw;
+        margin-left: 30px
+    }
+    
+    
+    .Search {
+        width: 40px;
+        height: 40px;
+        margin-right: 30px;
+    }
+    
+    .Home {
+        width: 40px;
+        height: 40px;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .contaner {
+
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        
+        .LogoNav{
+            grid-column: 1,
+        }
+        
+        
+        .Search {
+            grid-column: 2,
+        }
+        
+        .Home {
+            grid-column: 3,
+        }
+    }
+}
