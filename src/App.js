@@ -3,6 +3,7 @@ import { Button } from 'reactstrap';
 import './App.scss';
 import Carousel from './components/Carousel';
 import NavBar from './components/NavBar';
+import CountdownSection from './components/CountdownSection';
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -11,9 +12,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <NavBar />
-          <Carousel />        
+          <Carousel />
         </header>
-        
+        <section>
+          <div>
+            <CountdownSection />
+          </div>
+        </section>
         <Footer />
       </div>
     );
