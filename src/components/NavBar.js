@@ -1,20 +1,13 @@
 import React, { Component }  from 'react';
 import './NavBar.scss';
+import Modal from './Modal'
 import Logo from './pictures/logo2.png';
 import Home from './pictures/home-solid.svg';
-import Search from './pictures/search-solid.svg';
+
 import {
-    Collapse,
     Navbar,
-    NavbarToggler,
-    NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    NavItem } from 'reactstrap';
 
 
 //////////////////////////////CLASS NAVIGATION /////////////////////////////////
@@ -40,7 +33,7 @@ class Navigation extends Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="sm" className="contaner">  
+                <Navbar expand="sm" className="contaner">  
                     <a href="#">                  
                         <img src={Logo} alt="Logo" className="LogoNav"/>
                     </a>   
@@ -51,9 +44,7 @@ class Navigation extends Component {
                             </a>
                         </NavItem>
                         <NavItem>
-                            <a href="#">
-                                <img src={Search} alt="Search" className="Search"/>
-                            </a>
+                            <Modal />
                         </NavItem>
                     </Nav>                    
                 </Navbar>

@@ -1,42 +1,60 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import Search from './Search';
+import searchLogo from './pictures/search-solid.svg';
+import Cross from './pictures/times-solid.svg';
+import './Modal.scss'
 
+const customStyles = {
+    content : {
+        top                   : '35%',
+        left                  : '50%',
+        right                 : '50%',
+        bottom                : 'auto',
+        marginRight           : '-80%',
+        transform             : 'translate(-50%, -50%)'
+    }
+};
 
-/////////////////////////////////  CLASS MODAL /////////////////////////////////
-
-class Modals extends React.Component {
-    constructor(props) {
-        super(props);
+class PopUp extends React.Component {
+    constructor() {
+        super();
         this.state = {
-        modal: false
+        modalIsOpen: false
         };
-
-        this.toggle = this.toggle.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
-    toggle() {
-        this.setState({
-        modal: !this.state.modal
-        });
+    openModal() {
+        this.setState({modalIsOpen: true});
+    }
+
+    closeModal() {
+        this.setState({modalIsOpen: false});
     }
 
     render() {
         return (
-        <div>
-            <Button color="danger" onClick={this.toggle}>Bouton</Button>
-            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-            <ModalBody>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ModalBody>
-            <ModalFooter>
-                <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-            </ModalFooter>
-            </Modal>
-        </div>
+            <div>
+                <a href="#" onClick={this.openModal}>
+                    <img src={searchLogo} alt="Search" className="Search"/>
+                </a>
+
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    style={customStyles}
+                >
+
+                    <a href="#" onClick={this.closeModal}><img src={Cross} alt="Close" className="Close" /></a>
+                    <Search />
+
+                </Modal>
+            </div>
         );
     }
 }
 
-export default Modal;
+export default PopUp;

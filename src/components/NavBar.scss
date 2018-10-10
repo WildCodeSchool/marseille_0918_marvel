@@ -1,4 +1,14 @@
+article { 
+    width: 100%; 
+    margin: 60px auto; 
+    text-align: center;
+    zoom: 2;
+}
+
 .contaner {
+
+    background-color: white;
+
 
     .LogoNav{
         height: 10vw;
@@ -10,6 +20,25 @@
         width: 40px;
         height: 40px;
         margin-right: 30px;
+    }
+
+    a img:hover #search,
+        a:hover #home {
+        fill: red;
+    }
+    
+    a #search,
+    a #home { 
+        transition: 200ms;
+        transition-timing-function: ease-in-out;
+        -webkit-transition: 200ms;
+        -webkit-transition-timing-function: ease-in-out;
+    }
+
+    a { 
+        outline: none; 
+        border: 0; 
+        text-decoration: none; 
     }
     
     .Home {

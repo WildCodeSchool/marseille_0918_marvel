@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './Carousel.scss';
+import SuperHeroes from './pictures/superheroes.jpg';
+import KingKong from './pictures/kingkong.jpg';
+import HarryPotter from './pictures/harrypotter.jpg';
 import {
     Carousel,
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption
 } from 'reactstrap';
 
 
@@ -15,21 +17,21 @@ import {
 const items = [
     {
         id: 1,
-        altText: 'Marvel',
+        altText: 'SuperHeroes Marvel & Dc Comics',
         caption: 'Slide 1',
-        src: 'https://themightyblog.fr/wp-content/uploads/2017/11/marvel-comics-legacy.jpg'
+        src: SuperHeroes
     },
     {
         id: 2,
-        altText: 'DC Comics',
+        altText: 'Harry Potter',
         caption: 'Slide 2',
-        src: 'https://gfx.antyradio.pl/var/antyradio/storage/images/film/duperele/10-dowodow-na-to-ze-dc-jest-lepsze-od-marvela-20367/1379549-1-pol-PL/10-dowodow-na-to-ze-DC-jest-lepsze-od-Marvela_article.jpg'
+        src: HarryPotter
     },
     {
         id: 3,
-        altText: 'Vilains',
+        altText: 'King Kong',
         caption: 'Slide 3',
-        src: 'https://lamortestunehistoire.files.wordpress.com/2018/04/cropped-evilgroup1.jpg'
+        src: KingKong
     }
 ];
 
