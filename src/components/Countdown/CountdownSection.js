@@ -9,7 +9,7 @@ class CountdownSection extends Component {
         return (
             <React.Fragment>
                 <h2>COMING SOON</h2>
-                <h3 className="test">Fantastic Beasts 2</h3>
+                <h3 className="filmTitle">Fantastic Beasts 2</h3>
                 <p>14 nov 2018</p>
                 <Video />
                 <RealCountdown />

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+/* ************************  Container Part Menu of the Home Page ************************ */
+
+.container-hexa {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin : 30px 0;
+
+    /* ************************  Container  Menu Hexagone ************************ */
+    .menu-hexa {
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-rows: repeat(6, 91px);
+        grid-template-columns: repeat(3, 171px);
+        justify-content: center;
+        align-content: center;
+
+
+        /* ************************ Btn Hexagone ************************ */
+        .btn-hexa {
+            display: grid;
+            width: 220px;
+            height: 220px;
+            position: relative;
+            -webkit-clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0 50%);
+            clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0 50%);
+            align-self: center;
+            justify-self: center;
+            background-position: center;
+            background-size: contain;
+
+            /* ********* Titre btn Hexagone ********* */
+            .title-hexa {
+                display: none;
+                transition-delay: 0.6s;
+            }
+            /* ********* END Titre btn Hexagone ********* */
+        }
+
+        .btn-hexa:hover .title-hexa {
+            display: block;
+            font-family: 'Bangers', sans-serif;
+            align-self: center;
+            justify-self: center;
+            font-size: 35px;
+            z-index: 55;
+            transition-delay: 0.6s;
+            color: #222;
+        }
+        
+        .btn-hexa.hexa-middle:hover .title-hexa {
+            color: #F3F3F3;
+            font-size: 35px;
+        }
+
+        .btn-hexa:hover {
+            cursor: pointer;
+        }
+
+        .btn-hexa:hover:after {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #f28f18;
+            opacity: 0.85;
+            bottom: 0;
+            left: 0;
+        }
+
+        .btn-hexa:after {
+            content: " ";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            bottom: 0;
+            left: 0;
+            transition: 0.6s;
+        }
+
+        .btn-hexa.hexa-middle:hover:after {
+            background: #113971;
+            opacity: 1;
+            transition: 0.1s;
+        }
+        /* **************  END Btn Hexagone ************** */
+
+        /* ************************ Position each Btn  ************************ */
+        #hexa1 {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            order: 1;
+        }
+        
+        #hexa2 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        
+        #hexa3 {
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        
+        #hexa4 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        
+        #hexa5 {
+            grid-row-start: 4;
+            grid-row-end: 6;
+        }
+        
+        #hexa6 {
+            grid-row-start: 4;
+            grid-row-end: 6;
+        }
+        
+        #hexa7 {
+            grid-row-start: 5;
+            grid-row-end: 7;
+        }
+
+    }
+    /* **************  END Container Menu Hexagone ************** */
+
+    .menu-hexa:hover {
+        grid-template-columns: repeat(3, 175px);
+        grid-template-rows: repeat(6, 95px);
+    }
+
+
+}
+/* **************  END Container Part Menu of the Home Page ************** */
+
+
+
+
+
+/* ************************ MediaQueries Smartphone ***************************** */
+
+@media (max-width: 576px) {
+
+    .container-hexa {
+
+        .menu-hexa {
+            grid-template-rows: repeat(8, 74px);
+            grid-template-columns: repeat(2, 137px);
+
+            .btn-hexa {
+                width: 175px;
+                height: 175px;
+            }
+        
+            #hexa1 {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                grid-column-start: 1;
+            }
+        
+            #hexa2 {
+                grid-row-start: 2;
+                grid-row-end: 4;
+                grid-column-start: 2;
+            }
+        
+            #hexa3 {
+                grid-row-start: 4;
+                grid-row-end: 6;
+                grid-column-start: 2;
+            }
+        
+            #hexa4 {
+                grid-row-start: 3;
+                grid-row-end: 5;
+                grid-column-start: 1;
+            }
+        
+            #hexa5 {
+                grid-row-start: 5;
+                grid-row-end: 7;
+                grid-column-start: 1;
+            }
+        
+            #hexa6 {
+                grid-row-start: 6;
+                grid-row-end: 8;
+                grid-column-start: 2;
+            }
+        
+            #hexa7 {
+                grid-row-start: 7;
+                grid-row-end: 9;
+                grid-column-start: 1;
+            }
+
+        }
+    /* **************  END Container Menu Hexa ************** */
+        
+        .menu-hexa:hover {
+            grid-template-rows: repeat(8, 74px);
+            grid-template-columns: repeat(2, 137px);
+        }
+    }
+
+    /* ****************************  END MediaQueries **************************** */
+}
