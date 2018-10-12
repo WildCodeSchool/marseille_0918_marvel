@@ -4,6 +4,7 @@ import './App.scss';
 import Slide from './components/Slide/Slide';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
+import CountdownSection from './components/Countdown/CountdownSection';
 
 class App extends Component {
   render() {
@@ -13,6 +14,9 @@ class App extends Component {
           <NavBar/>
           <Slide/>
         </header>
+        <section className="Countdown">
+            <CountdownSection />
+        </section>
         <Footer/>
       </div>
     );

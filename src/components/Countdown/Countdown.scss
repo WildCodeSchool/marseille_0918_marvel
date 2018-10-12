@@ -1,0 +1,20 @@
+
+.Countdown {
+    display: grid;
+    margin: 5px;
+    h2 {
+        font-family: 'Bangers', cursive;
+        font-size: 3.5em;
+    }
+    
+    .clock {
+        font-family: 'Bangers', cursive;
+        grid-row: 5;
+        justify-self: center;
+        width: 100%;
+        font-size: 2em;
+        p {
+            margin: 0;
+        }
+    }
+}
