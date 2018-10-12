@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 
+//////////////////////////////////////// CLASS /////////////////////////////////
+
+
 class Search extends React.Component {
 
     constructor(props){

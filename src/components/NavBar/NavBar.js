@@ -1,9 +1,8 @@
 import React, { Component }  from 'react';
 import './NavBar.scss';
-import Modal from './Modal'
-import Logo from './pictures/logo2.png';
+import Modal from '../Modal/Modal'
+import Logo from './pictures/logo.png';
 import Home from './pictures/home-solid.svg';
-
 import {
     Navbar,
     Nav,
@@ -44,7 +43,7 @@ class Navigation extends Component {
                             </a>
                         </NavItem>
                         <NavItem>
-                            <Modal />
+                            <Modal/>
                         </NavItem>
                     </Nav>                    
                 </Navbar>

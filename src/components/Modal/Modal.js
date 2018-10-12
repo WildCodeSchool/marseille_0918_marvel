@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import Search from './Search';
+import Search from '../Search/Search';
 import searchLogo from './pictures/search-solid.svg';
 import Cross from './pictures/times-solid.svg';
 import './Modal.scss'
 
+
+//////////////////////////////////////// STYLE /////////////////////////////////
+
+
 const customStyles = {
     content : {
-        top                   : '35%',
+        top                   : '50%',
         left                  : '50%',
         right                 : '50%',
         bottom                : 'auto',
@@ -16,6 +19,10 @@ const customStyles = {
         transform             : 'translate(-50%, -50%)'
     }
 };
+
+
+//////////////////////////////////////// CLASS /////////////////////////////////
+
 
 class PopUp extends React.Component {
     constructor() {
@@ -46,6 +53,7 @@ class PopUp extends React.Component {
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
                     style={customStyles}
+                    id="Modal"
                 >
 
                     <a href="#" onClick={this.closeModal}><img src={Cross} alt="Close" className="Close" /></a>
