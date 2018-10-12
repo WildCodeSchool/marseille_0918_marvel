@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import './App.scss';
-import Carousel from './components/Carousel';
-import NavBar from './components/NavBar';
-import CountdownSection from './components/CountdownSection';
-import Footer from './components/Footer';
+import Slide from './components/Slide/Slide';
+import NavBar from './components/NavBar/NavBar';
+import Footer from './components/Footer/Footer';
+import CountdownSection from './components/Countdown/CountdownSection';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar />
-          <Carousel />
+          <NavBar/>
+          <Slide/>
         </header>
-        <section>
-          <div>
+        <section className="Countdown">
             <CountdownSection />
-          </div>
         </section>
-        <Footer />
+        <Footer/>
       </div>
     );
   }
