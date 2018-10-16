@@ -4,7 +4,7 @@ import axios from "axios";
 //////////////////////////////////////// CLASS /////////////////////////////////
 
 
-class Search extends React.Component {
+class InputSearch extends React.Component {
 
     constructor(props){
         super(props);
@@ -34,7 +34,6 @@ class Search extends React.Component {
         
         axios.get(url)
         
-        
         .then((response) => {
             if (response.status === 200 && response.data !== "" && response.data.response === "success") {
                 this.setState({characters: response.data.results});
@@ -42,7 +41,6 @@ class Search extends React.Component {
                 this.setState({characters: []})
             }
         })
-
         
         .catch((error) => {
             this.setState({characters: []})
@@ -50,70 +48,21 @@ class Search extends React.Component {
     }
 
     render(){
-
-
         if (this.state.characters && this.state.characters.length > 0) {
-
             return ( 
-
                 <div>
-                    
                     <input 
                         className="form-control form-control-lg"
-                        placeholder="Search your hero"
+                        placeholder="Search hero"
                         ref="searchBar"
                         onChange={this.minInput}
                         autoFocus
                     >
                     </input>
-
-                    <ul className="ListSearch">
-
-                        {//Map characters
-                        this.state.characters.map((character, index) => {
-
-                            // Regex Affiche personnage Comics
-                            if(/\bmarvel\b|\bcomics\b|\bsharon carter\b/gi.test(character.biography.publisher)){
-
-                                // filtre les 10 premiers
-                                if(index < 10) {
-
-                                    // Condition affichage name (full name)
-                                    if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name){
-
-                                        return (<li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>)
-
-                                    } else {
-
-                                        return (<li>{character.name}</li>)
-                                    }
-                                }
-                            }
-                        })}
-
-                    </ul>
-
                 </div>
-
             )
-
-
         }
-        return (
-            <div>
-                <input 
-                    className="form-control form-control-lg"
-                    placeholder="Search your hero"
-                    ref="searchBar"
-                    onChange={this.minInput}
-                    autoFocus
-                >
-                </input>
-            </div>
-        )
-        
-        
     }
 }
 
-export { Search as default };
+export { InputSearch as default };

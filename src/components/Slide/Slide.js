@@ -1,8 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import H from './pictures/harrypotter.jpg';
-import S from './pictures/superheroes.jpg';
-import K from './pictures/kingkong.jpg';
+import A from './pictures/avengers.jpg';
+import J from './pictures/justiceleague.jpg';
 import './Slide.scss'
 
 
@@ -22,13 +21,10 @@ class Slide extends React.Component {
         return (
             <Slider {...settings} className="slide">
                 <div>
-                    <img src={S} alt="Super Heroes" className="imgSlide"/>
+                    <img src={J} alt="Justice League" className="imgSlide"/>
                 </div>
                 <div>
-                    <img src={K} alt="King Kong" className="imgSlide"/>
-                </div>
-                <div>
-                    <img src={H} alt="Harry Potter" className="imgSlide"/>
+                    <img src={A} alt="Avengers" className="imgSlide"/>
                 </div>
             </Slider>
         );

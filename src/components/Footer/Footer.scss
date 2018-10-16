@@ -68,6 +68,7 @@
             bottom: -21vw;
             color:black;
             margin-bottom: 0;
+            font-size: 4vw;
         }
     
         .icons {
@@ -75,18 +76,18 @@
             bottom: 2vw;
             grid-column: 1;
             margin-right: 0;
-            grid-gap: 40px;
+            grid-gap: 10vw;
     
             .iconFacebook{
-                width: 45px;
+                width: 12vw;
             }
     
             .iconTwitter {
-                width: 45px;
+                width: 12vw;
             }
     
             .iconInstagram {
-                width: 45px;
+                width: 12vw;
             }
     
         }

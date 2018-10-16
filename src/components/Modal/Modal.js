@@ -11,10 +11,10 @@ import './Modal.scss'
 
 const customStyles = {
     content : {
-        top                   : '50%',
+        top                   : '45%',
         left                  : '50%',
         right                 : '50%',
-        bottom                : 'auto',
+        bottom                : '0%',
         marginRight           : '-80%',
         transform             : 'translate(-50%, -50%)'
     }
@@ -44,9 +44,11 @@ class PopUp extends React.Component {
 
     render() {
         return (
-            <div>
-                <a href="#" onClick={this.openModal}>
-                    <img src={searchLogo} alt="Search" className="Search"/>
+            <div className="SearchModal">
+                <a onClick={this.openModal}> 
+                    <img src={searchLogo} alt="Search" className="Search"/> 
+                    <br/>
+                    <span className="LabelIcon">Search</span>
                 </a>
 
                 <Modal
@@ -56,7 +58,9 @@ class PopUp extends React.Component {
                     id="Modal"
                 >
 
-                    <a href="#" onClick={this.closeModal}><img src={Cross} alt="Close" className="Close" /></a>
+                    <a href="#" onClick={this.closeModal} className="ButtonClose">
+                        <img src={Cross} alt="Close" className="Close" />
+                    </a>
                     <Search />
 
                 </Modal>

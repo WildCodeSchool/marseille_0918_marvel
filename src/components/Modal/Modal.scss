@@ -1,3 +1,40 @@
+.SearchModal {
+    
+    z-index: 1;
+    
+}
+
+
 .Close {
     width: 25px;
+    height: 40px;
+}
+
+.ReactModal__Content--after-open{
+    background: none !important;
+    border: none !important;
+    
+}
+
+.ListSearch {
+    list-style: none;
+    margin-top: 2%;
+
+    li{
+        margin-top: 0.5%;
+        font-weight: bold;
+        font-size: 1.2vw
+    }
+
+}
+
+.ButtonClose {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.FullName {
+    font-style: italic;
+    font-size: 0.9vw;
 }

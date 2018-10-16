@@ -34,7 +34,7 @@ class RealCountown extends Component {
     render() {
         return (
             <div className="clock">
-                <Countdown date={new Date("Nov 14, 2018 09:00:00")}
+                <Countdown date={new Date("Dec 19, 2018 09:00:00")}
                     renderer={renderer}
                 />
             </div>
