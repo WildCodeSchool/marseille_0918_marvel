@@ -35,8 +35,9 @@
 }
 @media screen and (min-width: 576px) {
     .Navbar {
+        position: absolute;
+        width: 100%;
         display: grid;
-        background: transparent;
         grid-template-columns: 1fr 4fr 1fr;
         justify-items: center;
         align-items: center;

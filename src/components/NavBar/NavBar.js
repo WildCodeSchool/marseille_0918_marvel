@@ -13,23 +13,6 @@ class Navigation extends Component {
     render() {
         return (
             <div className="Navbar">
-                {/* <Navbar expand="sm" className="contaner">  
-                    <a href="#">                  
-                        <img src={Logo} alt="Logo" className="LogoNav"/>
-                    </a>   
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <a href="#">
-                                <img src={Home} alt="Home" className="Home"/> 
-                            </a>
-                        </NavItem>
-                        <NavItem>
-                            <Modal/>
-                        </NavItem>
-                    </Nav>                    
-                </Navbar> */}
-                                
-
                 <a href="#">
                     <img src={Home} alt="Home" className="Home"/>
                     <br/>
