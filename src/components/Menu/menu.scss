@@ -10,8 +10,8 @@
     /** ******************* Container Menu Hexagones ******************* **/
     .menu-hexa {
         display: grid;
-        grid-template-rows: repeat(6, 95px);
-        grid-template-columns: repeat(3, 175px);
+        grid-template-rows: repeat(6, 138px);
+        grid-template-columns: repeat(3, 258px);
         justify-content: center;
         align-content: center;
         margin : 15px 0;
@@ -20,8 +20,8 @@
         /** ******************* Button Hexa ******************* **/
         .btn-hexa {
             display: grid;
-            width: 220px;
-            height: 220px;
+            width: 330px;
+            height: 330px;
             position: relative;
             -webkit-clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0 50%);
             clip-path: polygon(25% 10%, 75% 10%, 100% 50%, 75% 90%, 25% 90%, 0 50%);
@@ -69,13 +69,13 @@
                     h3 {
                         margin: 0;
                         padding: 0;
-                        font-size: 35px;
+                        font-size: 50px;
                         color: #fff;
                         font-family: Bangers, sans-serif;
 
                         span {
                             color: #ccc;
-                            font-size: 30px;
+                            font-size: 45px;
                         }
                     }
                 /** ****** END Text Back Btn Hexa ****** **/
@@ -156,6 +156,46 @@
 
 /** °°°°°°°°°°°°°°°°°°°°°°°°°°°°°° MEDIA QUERIES °°°°°°°°°°°°°°°°°°°°°°°°°°°°°° **/
 
+/** ******** Tablette / Ordi ******** **/
+@media (min-width: 577px) and (max-width: 1439px) {
+
+    /** ******** TABLETTE / ORDI Container Section Menu ******** **/
+    .container-hexa {
+
+        /** ******** TABLETTE / ORDI Container Menu Hexagones ******** **/
+        .menu-hexa {
+            grid-template-rows: repeat(6, 95px);
+            grid-template-columns: repeat(3, 175px);
+        
+            /** ******** TABLETTE / ORDI Button Hexa ******** **/
+            .btn-hexa {
+                width: 220px;
+                height: 220px;
+
+                .back {
+                    .details{
+                        h3 {
+                            font-size: 35px;
+                            span {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        /** ******** END TABLETTE / ORDI Container Menu Hexagones ******** **/
+        }
+
+
+    /** ******** END TABLETTE / ORDI Container Section Menu ******** **/
+    }
+
+/** ******** END TABLETTE / ORDI ******** **/
+}
+
+
 /** ******** Smartphone ******** **/
 @media (max-width: 576px) {
 
@@ -171,6 +211,17 @@
             .btn-hexa {
                 width: 175px;
                 height: 175px;
+
+                .back {
+                    .details{
+                        h3 {
+                            font-size: 25px;
+                            span {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
             }
 
             #hexaTop {
@@ -218,13 +269,6 @@
         /** ******** END SMARTPHONE Container Menu Hexagones ******** **/
         }
 
-        /** ******** SMARTPHONE Hover Container Menu Hexagones ******** **/
-        .menu-hexa:hover {
-            grid-template-rows: repeat(8, 74px);
-            grid-template-columns: repeat(2, 137px);
-
-        /** ******** END SMARTPHONE Hover Container Menu Hexagones ******** **/
-        }
 
     /** ******** END SMARTPHONE Container Section Menu ******** **/
     }

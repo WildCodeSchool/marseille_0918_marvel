@@ -10,13 +10,13 @@ import Background from './bg.jpg';
 class App extends Component {
   render() {
     return (
-      <div className="App" style={{backgroundImage: `url(${Background})`}}>
+      <div className="App">
         <header className="App-header">
           <NavBar/>
           <Slide/>
         </header>
         <Menu />
-        <Footer/>
+        <Footer />
       </div>
     );
   }
