@@ -1,103 +1,7 @@
-// .Foot {
-//     display: grid;
-//     grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
-//     height: 4vw;
-//     align-items: center;
-    
-    
-//     .footerImg {
-//         width: 100%;
-//         height: 18vw;
-//         grid-column: 1 / 4;
-//         position: inherit;
-//     }
-
-//     .Copyright {
-//         justify-self: center;
-//         align-self: flex-end;
-//         margin-bottom: -16vw;
-//         text-align: center;
-//         font-size: 1vw;
-//         grid-column: 2;
-//         z-index: 1;
-//         color: white;
-//     }
-
-//     .icons {
-//         display: grid;
-//         grid-column: 3;
-//         grid-template-columns: repeat(3,1fr);
-//         grid-gap: 15px;
-//         justify-self: flex-end;
-//         margin-bottom: -28vw;
-//         margin-right: 50px;
-//         z-index: 1;
-//         bottom: -7vw;
-
-//         .iconFacebook{
-//             grid-column: 1;
-//             width: 3.5vw;
-//         }
-
-//         .iconTwitter {
-//             grid-column: 2;
-//             width: 3.5vw;
-//         }
-
-//         .iconInstagram {
-//             grid-column: 3;
-//             width: 3.5vw;
-//         }
-//     }
-// }
-/////////////////////////////// MEDIA QUERIES  /////////////////////////////////
-
-
 @media screen and (max-width: 576px) {
-.Foot {
-
-    // .Copyright {
-    //     justify-self: center;
-    //     align-self: flex-end;
-    //     margin-bottom: -16vw;
-    //     text-align: center;
-    //     font-size: 1vw;
-    //     grid-column: 2;
-    //     z-index: 1;
-    //     color: white;
-    // }
-
-    .icons {
-        display: grid;
-        grid-column: 3;
-        grid-template-columns: repeat(3,1fr);
-        grid-gap: 15px;
-        justify-self: flex-end;
-        margin-bottom: -28vw;
-        margin-right: 50px;
-        z-index: 1;
-        bottom: -7vw;
-
-        .iconFacebook{
-            grid-column: 1;
-            width: 3.5vw;
-        }
-
-        .iconTwitter {
-            grid-column: 2;
-            width: 3.5vw;
-        }
-
-        .iconInstagram {
-            grid-column: 3;
-            width: 3.5vw;
-        }
-    }
-}
     .Foot {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        grid-row: 3;
         height: 4vw;
         align-items: center;
 
@@ -113,28 +17,33 @@
             align-self: flex-end;
             text-align: center;
             font-size: 1vw;
-            grid-column: 2;
+            grid-column: 1 / 4;
             z-index: 1;
             color:black;
-            margin-bottom: 0;
             font-size: 4vw;
             grid-row: 2;
         }
     
         .icons {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
             grid-gap: 10vw;
-            grid-row: 1;
+            grid-column: 1 / 4;
+            margin: 5vw 15vw 5vw 15vw;
     
             .iconFacebook{
-                width: 12vw;
+                width: 8vw;
+                grid-column: 2;
             }
     
             .iconTwitter {
-                width: 12vw;
+                width: 8vw;
+                grid-column: 3;
             }
     
             .iconInstagram {
-                width: 12vw;
+                width: 8vw;
+                grid-column: 4;
             }
     
         }
@@ -144,215 +53,55 @@
 
 @media screen and (min-width: 576px) {
     .Foot {
-        
-        .footerImg {
-            height: 25vw;
-            bottom: -35vw;
-        }
-    
-        .Copyright {
-            bottom: -17vw;
-            color:black;
-            margin-bottom: 0;
-        }
-    
-        .icons {
-            justify-self: center;
-            bottom: -3vw;
-            grid-column: 1;
-            margin-right: 0;
-            grid-gap: 40px;
-    
-            .iconFacebook{
-                width: 45px;
-            }
-    
-            .iconTwitter {
-                width: 45px;
-            }
-    
-            .iconInstagram {
-                width: 45px;
-            }
-    
-        }
-    
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .Foot {
-        
-        .footerImg {
-            height: 25vw;
-            bottom: -14vw;
-        }
-    
-        .Copyright {
-            bottom: -26vw;
-            color:white;
-            margin-bottom: 0;
-        }
-    
-        .icons {
-            justify-self: center;
-            bottom: 1vw;
-            grid-column: 1;
-            margin-right: 0;
-            grid-gap: 40px;
-    
-            .iconFacebook{
-                width: 45px;
-            }
-    
-            .iconTwitter {
-                width: 45px;
-            }
-    
-            .iconInstagram {
-                width: 45px;
-            }
-    
-        }
-    
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .Foot {
-        
-        .footerImg {
-            height: 25vw;
-            bottom: -9vw;
-        }
-    
-        .Copyright {
-            bottom: -23vw;
-            color:white;
-            margin-bottom: 0;
-        }
-    
-        .icons {
-            justify-self: center;
-   
-            .iconFacebook{
-                grid-column: 1;
-                width: 40px;
-            }
-    
-            .iconTwitter {
-                grid-column: 2;
-                width: 40px;
-            }
-    
-            .iconInstagram {
-                grid-column: 3;
-                width: 40px;
-            }
-    
-        }
-    
-    }
-}           
-
-
-@media screen and (min-width: 1200px) {
-    .Foot {
-        
-        .footerImg {
-            height: 19vw;
-            bottom: -5.5vw;
-        }
-    
-        .Copyright {
-            bottom: -15vw;
-            color: white;
-            margin-bottom: 0;
-        }
-    
-        .icons {
-            display: grid;
-            grid-column: 3;
-            grid-template-columns: repeat(3,1fr);
-            grid-gap: 15px;
-            justify-self: flex-end;
-            margin-right: 50px;
-            position: absolute;
-            z-index: 1;
-            bottom: -14vw;
-    
-            .iconFacebook{
-                grid-column: 1;
-                width: 40px;
-            }
-    
-            .iconTwitter {
-                grid-column: 2;
-                width: 40px;
-            }
-    
-            .iconInstagram {
-                grid-column: 3;
-                width: 40px;
-            }
-    
-        }
-    
-    }
-}
-
-
-@media screen and (min-width: 2540px) {
-    .Foot {
         display: grid;
-        grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
+        grid-template-columns: repeat(3, 1fr);
         height: 4vw;
         align-items: center;
-        
+        justify-items: center;
         
         .footerImg {
             width: 100%;
             height: 18vw;
-            grid-column: 1 / 4;
             position: inherit;
+            grid-column: 1 / 4;
         }
     
         .Copyright {
             justify-self: center;
             align-self: flex-end;
-            margin-bottom: -16vw;
             text-align: center;
             font-size: 1vw;
-            grid-column: 2;
             z-index: 1;
-            color: white;
+            color:white;
+            font-size: 1.5vw;
+            margin-bottom: -17.5vw;
+            grid-column: 2;
         }
     
         .icons {
-            display: grid;
-            grid-column: 3;
-            grid-template-columns: repeat(3,1fr);
-            grid-gap: 15px;
-            justify-self: flex-end;
-            margin-bottom: -28vw;
-            margin-right: 50px;
             z-index: 1;
-            bottom: -7vw;
+            grid-gap: 10vw;
+            grid-column: 3;
+            justify-self: flex-end;
+            grid-column: 3;
+            margin-bottom: -29vw;
     
             .iconFacebook{
-                grid-column: 1;
                 width: 3.5vw;
+                margin-right: 3vw;
             }
     
             .iconTwitter {
-                grid-column: 2;
                 width: 3.5vw;
+                margin-right: 3vw;
             }
     
             .iconInstagram {
-                grid-column: 3;
                 width: 3.5vw;
+                margin-right: 3vw;
             }
+    
         }
+    
     }
 }
