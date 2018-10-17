@@ -3,10 +3,6 @@ import './NavBar.scss';
 import Modal from '../Modal/Modal'
 import Logo from './pictures/logo.png';
 import Home from './pictures/home-solid.svg';
-import {
-    Navbar,
-    Nav,
-    NavItem } from 'reactstrap';
 
 
 //////////////////////////////CLASS NAVIGATION /////////////////////////////////

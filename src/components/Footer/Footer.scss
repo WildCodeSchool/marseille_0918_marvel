@@ -1,29 +1,71 @@
-.Foot {
-    display: grid;
-    grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
-    height: 100px;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
+// .Foot {
+//     display: grid;
+//     grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
+//     height: 4vw;
+//     align-items: center;
     
-    .footerImg {
-        position: relative;
-        width: 100%;
-        height: 15vw;
-        grid-column: 1 / 4;
-    }
+    
+//     .footerImg {
+//         width: 100%;
+//         height: 18vw;
+//         grid-column: 1 / 4;
+//         position: inherit;
+//     }
 
-    .Copyright {
-        justify-self: center;
-        align-self: flex-end;
-        bottom: -8.7vw;
-        text-align: center;
-        size: 0.3em;
-        grid-column: 1;
-        position: absolute;
-        z-index: 1;
-        color: white
-    }
+//     .Copyright {
+//         justify-self: center;
+//         align-self: flex-end;
+//         margin-bottom: -16vw;
+//         text-align: center;
+//         font-size: 1vw;
+//         grid-column: 2;
+//         z-index: 1;
+//         color: white;
+//     }
+
+//     .icons {
+//         display: grid;
+//         grid-column: 3;
+//         grid-template-columns: repeat(3,1fr);
+//         grid-gap: 15px;
+//         justify-self: flex-end;
+//         margin-bottom: -28vw;
+//         margin-right: 50px;
+//         z-index: 1;
+//         bottom: -7vw;
+
+//         .iconFacebook{
+//             grid-column: 1;
+//             width: 3.5vw;
+//         }
+
+//         .iconTwitter {
+//             grid-column: 2;
+//             width: 3.5vw;
+//         }
+
+//         .iconInstagram {
+//             grid-column: 3;
+//             width: 3.5vw;
+//         }
+//     }
+// }
+/////////////////////////////// MEDIA QUERIES  /////////////////////////////////
+
+
+@media screen and (max-width: 576px) {
+.Foot {
+
+    // .Copyright {
+    //     justify-self: center;
+    //     align-self: flex-end;
+    //     margin-bottom: -16vw;
+    //     text-align: center;
+    //     font-size: 1vw;
+    //     grid-column: 2;
+    //     z-index: 1;
+    //     color: white;
+    // }
 
     .icons {
         display: grid;
@@ -31,52 +73,57 @@
         grid-template-columns: repeat(3,1fr);
         grid-gap: 15px;
         justify-self: flex-end;
+        margin-bottom: -28vw;
         margin-right: 50px;
-        position: absolute;
         z-index: 1;
         bottom: -7vw;
 
         .iconFacebook{
             grid-column: 1;
-            width: 40px;
+            width: 3.5vw;
         }
 
         .iconTwitter {
             grid-column: 2;
-            width: 40px;
+            width: 3.5vw;
         }
 
         .iconInstagram {
             grid-column: 3;
-            width: 40px;
+            width: 3.5vw;
         }
     }
 }
-
-/////////////////////////////// MEDIA QUERIES  /////////////////////////////////
-
-
-@media screen and (max-width: 576px) {
     .Foot {
-                
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row: 3;
+        height: 4vw;
+        align-items: center;
+
         .footerImg {
-            height: 25vw;
-            bottom: -50vw;
+            width: 100%;
+            height: 18vw;
+            position: inherit;
+            grid-column: 1 / 4;
         }
     
         .Copyright {
-            bottom: -21vw;
+            justify-self: center;
+            align-self: flex-end;
+            text-align: center;
+            font-size: 1vw;
+            grid-column: 2;
+            z-index: 1;
             color:black;
             margin-bottom: 0;
             font-size: 4vw;
+            grid-row: 2;
         }
     
         .icons {
-            justify-self: center;
-            bottom: 2vw;
-            grid-column: 1;
-            margin-right: 0;
             grid-gap: 10vw;
+            grid-row: 1;
     
             .iconFacebook{
                 width: 12vw;
@@ -187,27 +234,27 @@
     
         .icons {
             justify-self: center;
-            bottom: 1vw;
-            grid-column: 1;
-            margin-right: 0;
-            grid-gap: 40px;
-    
+   
             .iconFacebook{
-                width: 45px;
+                grid-column: 1;
+                width: 40px;
             }
     
             .iconTwitter {
-                width: 45px;
+                grid-column: 2;
+                width: 40px;
             }
     
             .iconInstagram {
-                width: 45px;
+                grid-column: 3;
+                width: 40px;
             }
     
         }
     
     }
-}
+}           
+
 
 @media screen and (min-width: 1200px) {
     .Foot {
@@ -254,17 +301,31 @@
     }
 }
 
-@media screen and (min-width: 1400px) {
+
+@media screen and (min-width: 2540px) {
     .Foot {
+        display: grid;
+        grid-template-columns: minmax(15%,25%) 1fr minmax(15%,25%);
+        height: 4vw;
+        align-items: center;
+        
         
         .footerImg {
-            height: 15vw;
-            bottom: -9vw;
+            width: 100%;
+            height: 18vw;
+            grid-column: 1 / 4;
+            position: inherit;
         }
     
         .Copyright {
-            bottom: -17vw;
-            margin-bottom: 0;
+            justify-self: center;
+            align-self: flex-end;
+            margin-bottom: -16vw;
+            text-align: center;
+            font-size: 1vw;
+            grid-column: 2;
+            z-index: 1;
+            color: white;
         }
     
         .icons {
@@ -273,27 +334,25 @@
             grid-template-columns: repeat(3,1fr);
             grid-gap: 15px;
             justify-self: flex-end;
+            margin-bottom: -28vw;
             margin-right: 50px;
-            position: absolute;
             z-index: 1;
-            bottom: -16vw;
+            bottom: -7vw;
     
             .iconFacebook{
                 grid-column: 1;
-                width: 40px;
+                width: 3.5vw;
             }
     
             .iconTwitter {
                 grid-column: 2;
-                width: 40px;
+                width: 3.5vw;
             }
     
             .iconInstagram {
                 grid-column: 3;
-                width: 40px;
+                width: 3.5vw;
             }
-    
         }
-    
     }
 }

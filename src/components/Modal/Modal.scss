@@ -1,31 +1,9 @@
 .SearchModal {
-    
     z-index: 1;
-    
 }
-
 
 .Close {
-    width: 25px;
-    height: 40px;
-}
-
-.ReactModal__Content--after-open{
-    background: none !important;
-    border: none !important;
-    
-}
-
-.ListSearch {
-    list-style: none;
-    margin-top: 2%;
-
-    li{
-        margin-top: 0.5%;
-        font-weight: bold;
-        font-size: 1.2vw
-    }
-
+    height: 3.5vw;
 }
 
 .ButtonClose {
@@ -34,7 +12,102 @@
     margin-bottom: 10px;
 }
 
-.FullName {
-    font-style: italic;
-    font-size: 0.9vw;
+@media screen and (max-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -10%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 4vw
+        }
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 2.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 45% !important;
+    }
 }
+
+@media screen and (min-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -4%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 2.5vw
+        }
+        
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 2.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 43% !important;
+        
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 1%;
+        margin-left: -1%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }
+}
+

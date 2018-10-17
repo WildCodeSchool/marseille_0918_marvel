@@ -11,10 +11,9 @@ import './Modal.scss'
 
 const customStyles = {
     content : {
-        top                   : '45%',
         left                  : '50%',
         right                 : '50%',
-        bottom                : '0%',
+        bottom                : '-21%',
         marginRight           : '-80%',
         transform             : 'translate(-50%, -50%)'
     }

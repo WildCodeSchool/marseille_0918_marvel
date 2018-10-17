@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import './Search.scss'
 
 //////////////////////////////////////// CLASS /////////////////////////////////
 
@@ -13,7 +14,6 @@ class Search extends React.Component {
         };
         this.startRequest = this.startRequest.bind(this)
         this.minInput = this.minInput.bind(this)
-
     }
 
     minInput(e) {
@@ -50,57 +50,10 @@ class Search extends React.Component {
     }
 
     render(){
+        return ( 
 
-
-        if (this.state.characters && this.state.characters.length > 0) {
-
-            return ( 
-
-                <div>
-                    
-                    <input 
-                        className="form-control form-control-lg"
-                        placeholder="Search your hero"
-                        ref="searchBar"
-                        onChange={this.minInput}
-                        autoFocus
-                    >
-                    </input>
-
-                    <ul className="ListSearch">
-
-                        {//Map characters
-                        this.state.characters.map((character, index) => {
-
-                            // Regex Affiche personnage Comics
-                            if(/\bmarvel\b|\bcomics\b|\bsharon carter\b/gi.test(character.biography.publisher)){
-
-                                // filtre les 10 premiers
-                                if(index < 10) {
-
-                                    // Condition affichage name (full name)
-                                    if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name){
-
-                                        return (<li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>)
-
-                                    } else {
-
-                                        return (<li>{character.name}</li>)
-                                    }
-                                }
-                            }
-                        })}
-
-                    </ul>
-
-                </div>
-
-            )
-
-
-        }
-        return (
             <div>
+                
                 <input 
                     className="form-control form-control-lg"
                     placeholder="Search your hero"
@@ -109,10 +62,38 @@ class Search extends React.Component {
                     autoFocus
                 >
                 </input>
+
+                { // Condition Si Characters défini et nb caractères sup a 0
+                this.state.characters && this.state.characters.length > 0 &&
+
+                    <ul className="ListSearch">
+
+                    {//Map characters
+                    this.state.characters.map((character, index) => {
+
+                        // Regex Affiche personnage Comics
+                        if(/\bmarvel\b|\bcomics\b|\bsharon carter\b/gi.test(character.biography.publisher)){
+
+                            // Filtre les 10 premiers
+                            if(index < 10) {
+
+                                // Condition affichage name (full name)
+                                if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
+
+                                    return (<li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>)
+
+                                } else {
+
+                                    return (<li>{character.name}</li>)
+
+                                }
+                            }
+                        }
+                    })}
+                </ul>
+                }
             </div>
         )
-        
-        
     }
 }
 
