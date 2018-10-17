@@ -1,4 +1,7 @@
-.form-control {
-    font-size: 2vw !important;
-    height: 3vw !important;
+@media screen and (min-width: 2560px) {
+
+    .form-control {
+        font-size: 2vw !important;
+        height: 3vw !important;
+    }
 }
