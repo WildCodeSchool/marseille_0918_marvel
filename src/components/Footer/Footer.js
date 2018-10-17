@@ -15,10 +15,6 @@ class Footer extends Component {
             <React.Fragment>
                 <div className="Foot">
 
-                    {/* <a href="#">
-                        <img src={Logo} alt="Logo" className="LogoFooter" />
-                    </a> */}
-
                     <p className="Copyright">
                         Contact Us 
                         <br/>

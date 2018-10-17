@@ -1,61 +1,87 @@
-.contaner {
+@import '../Fonts.scss';
 
-    position: absolute;
-    z-index: 1;
+@media screen and (max-width: 576px) {
+    .Navbar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        background-color: #323333;
+        height: 20vw;
 
-
-    .LogoNav{
-        position: absolute;
-        height: 10vw;
-        margin-top: 2%;
-        margin-left: 2%;
-    }
-    
-    .Search {
-        position: absolute;
-        top: 5vw;
-        right: 7vw;
-        width: 3vw;
-        height: 3vw;
-        margin-right: 50px;
-        background-color: rgba(242, 143, 24,0.8);
-        border-radius: 5px;
-        padding: 8px;
-    }
-    
-    .Home {
-        position: absolute;
-        top: 5vw;
-        right: 3vw;
-        width: 3vw;
-        height: 3vw;
-        margin-right: 40px;
-        background-color: rgba(242, 143, 24,0.8);
-        border-radius: 5px;
-        padding: 8px
-    }
-    .Home:hover {
-        background-color:rgb(31, 117, 185);
-    }
-    .Search:hover {
-        background-color:rgb(31, 117, 185);    
-    }
-}
-
-@media (max-width: 640px) {
-
-    .contaner {
-
-        .Search {
-            width: 6vw;
-            height: 6vw;
-            grid-column: 1;
+        .LabelIcon {
+            display: none;   
         }
 
         .Home {
-            width: 6vw;
-            height: 6vw;
+            width: 8vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 1vw;
+            grid-column: 1;
+        }
+        .LogoNav{
+            height: 15vw;
+            grid-column: 2;
+        }
+        .Search {
+            width: 8vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 1vw;
             grid-column: 3;
         }
+    }
+}
+@media screen and (min-width: 576px) {
+    .Navbar {
+        display: grid;
+        background: transparent;
+        grid-template-columns: 1fr 4fr 1fr;
+        justify-items: center;
+        align-items: center;
+        z-index: 1;
+        height: 10vw;
+
+        a {
+            z-index: 1;
+            text-decoration: none !important;
+        }
+
+        .LabelIcon {
+            font: 100% $font-bangers;
+            color: white;
+            text-shadow: #323333 1px 1px, #323333 -1px 1px, #323333 -1px -1px, #323333 1px -1px;
+            font-size: 1.5vw;
+        }
+
+        .Home {
+            z-index: 1;
+            width: 3.5vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 0.7vw;
+            grid-column: 1;
+        }
+        .LogoNav{
+            z-index: 1;
+            height: 10vw;
+            grid-column: 2;
+        }
+        .Search {
+            z-index: 1;
+            width: 3.5vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 0.7vw;
+            grid-column: 3;
+        }
+        .Home:hover {
+            background-color:rgb(31, 117, 185);
+        }
+        .Search:hover {
+            background-color:rgb(31, 117, 185);    
+        }
+
     }
 }

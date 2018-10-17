@@ -3,10 +3,6 @@ import './NavBar.scss';
 import Modal from '../Modal/Modal'
 import Logo from './pictures/logo.png';
 import Home from './pictures/home-solid.svg';
-import {
-    Navbar,
-    Nav,
-    NavItem } from 'reactstrap';
 
 
 //////////////////////////////CLASS NAVIGATION /////////////////////////////////
@@ -14,25 +10,10 @@ import {
 
 class Navigation extends Component {
 
-    constructor(props) {
-        super(props);
-
-            this.toggle = this.toggle.bind(this);
-            this.state = {
-            isOpen: false
-            };
-    }
-
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
-
     render() {
         return (
-            <div>
-                <Navbar expand="sm" className="contaner">  
+            <div className="Navbar">
+                {/* <Navbar expand="sm" className="contaner">  
                     <a href="#">                  
                         <img src={Logo} alt="Logo" className="LogoNav"/>
                     </a>   
@@ -46,7 +27,16 @@ class Navigation extends Component {
                             <Modal/>
                         </NavItem>
                     </Nav>                    
-                </Navbar>
+                </Navbar> */}
+                                
+
+                <a href="#">
+                    <img src={Home} alt="Home" className="Home"/>
+                    <br/>
+                    <span className="LabelIcon">Home</span>
+                </a>
+                <img src={Logo} alt="Logo" className="LogoNav"/>
+                <Modal/>
             </div>
         );
     }
