@@ -5,6 +5,7 @@ import Slide from "./components/Slide/Slide";
 import Menu from "./components/Menu/menu";
 import CountdownSection from "./components/Countdown/CountdownSection";
 import Footer from "./components/Footer/Footer";
+import Article from "./components/article/Article";
 
 import Background from "./bg.jpg";
 
@@ -19,6 +20,9 @@ class App extends Component {
         <Menu />
         <section className="Countdown">
           <CountdownSection />
+        </section>
+        <section className="Container-article">
+          <Article />
         </section>
         <Footer />
       </div>

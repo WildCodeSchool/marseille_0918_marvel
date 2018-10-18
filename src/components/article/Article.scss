@@ -1,0 +1,81 @@
+.Container-article {
+  margin: 15px 20px 30px ;
+
+  .Intro {
+
+    h2 {
+    font-size: 3.5em;
+    font-family: 'Bangers', cursive;
+         margin: 25px auto 10px;
+         background: #f28f18;
+         width: 50%;
+         color: #f3F3F3;
+         text-align: center;
+         transform: skew(23deg);
+    }
+    p {
+    font-size: 1.5em;
+    }
+  }
+  .Storm {
+    .Article{
+      h3 {
+        font-size: 1.7em;
+        color: blue;
+      }
+      p{
+        font-size: 1.5em;
+        }
+      }
+  }
+
+}
+
+
+
+
+/* ************************ MediaQueries Smartphone ***************************** */
+
+@media screen and(max-width: 576px) {
+  .Storm{
+    display: grid;
+    width: auto;
+    grid-column-gap: 2%;
+
+      img{
+        grid-row-start: 1;
+        grid-column-start: 1;
+        width: 100%;
+        align-self: center;
+      }
+      .Article{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        text-align: justify;
+        width: 100%;
+        align-self: center;
+
+      }
+  }
+}
+/* ************************ MediaQueries More ***************************** */
+@media screen and(min-width: 577px) {
+  .Storm {
+  display: grid;
+  height: 50%;
+  grid-column-gap: 5%;
+
+    img{
+      width: 100%;
+      grid-column-start: 1;
+      align-self: center;
+
+    }
+    .Article{
+      width: 100%;
+      grid-column-start: 2;
+      text-align: justify;
+      align-self: center;
+    }
+  }
+}
