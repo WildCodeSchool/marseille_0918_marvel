@@ -1,0 +1,88 @@
+@import '../Fonts.scss';
+
+@media screen and (max-width: 576px) {
+    .Navbar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        align-items: center;
+        background-color: #323333;
+        height: 20vw;
+
+        .LabelIcon {
+            display: none;   
+        }
+
+        .Home {
+            width: 8vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 1vw;
+            grid-column: 1;
+        }
+        .LogoNav{
+            height: 15vw;
+            grid-column: 2;
+        }
+        .Search {
+            width: 8vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 1vw;
+            grid-column: 3;
+        }
+    }
+}
+@media screen and (min-width: 576px) {
+    .Navbar {
+        position: absolute;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        justify-items: center;
+        align-items: center;
+        z-index: 1;
+        height: 10vw;
+
+        a {
+            z-index: 1;
+            text-decoration: none !important;
+        }
+
+        .LabelIcon {
+            font: 100% $font-bangers;
+            color: white;
+            text-shadow: #323333 1px 1px, #323333 -1px 1px, #323333 -1px -1px, #323333 1px -1px;
+            font-size: 1.5vw;
+        }
+
+        .Home {
+            z-index: 1;
+            width: 3.5vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 0.7vw;
+            grid-column: 1;
+        }
+        .LogoNav{
+            z-index: 1;
+            height: 10vw;
+            grid-column: 2;
+        }
+        .Search {
+            z-index: 1;
+            width: 3.5vw;
+            background-color: rgba(242, 143, 24,0.8);
+            border-radius: 5px;
+            padding: 0.7vw;
+            grid-column: 3;
+        }
+        .Home:hover {
+            background-color:rgb(31, 117, 185);
+        }
+        .Search:hover {
+            background-color:rgb(31, 117, 185);    
+        }
+
+    }
+}

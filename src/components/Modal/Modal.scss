@@ -1,0 +1,162 @@
+.SearchModal {
+    z-index: 1;
+}
+
+.Close {
+    height: 3.5vw;
+}
+
+.ButtonClose {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -10%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 4vw
+        }
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 2.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -4%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 2vw
+        }
+        
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 1.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 46% !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -4%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 2vw
+        }
+        
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 1.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 46% !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -2%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 52% !important;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 1%;
+        margin-left: -1%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 50% !important;
+    }
+}
+
