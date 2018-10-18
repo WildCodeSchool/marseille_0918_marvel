@@ -1,6 +1,6 @@
 .Countdown {
   display: grid;
-  margin: 5px;
+  margin: 15px 0;
   position: relative;
 
   h2 {
@@ -66,7 +66,6 @@
       justify-content: center;
       grid-row-start: 2;
       grid-column-start: 1;
-      // à virer pour revenir comme c'était avant
       color: black;
       .clock {
         display: grid;
@@ -104,8 +103,6 @@
     .videoCountGrid {
       grid-template-rows: 1fr;
       grid-template-columns: 60% 40%;
-      // à virer pour revenir comme c'était avant
-      background-color: none;
 
       .youtube {
         padding-bottom: 0px;

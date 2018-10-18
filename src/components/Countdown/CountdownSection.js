@@ -7,7 +7,7 @@ class CountdownSection extends Component {
   render() {
     const { details, index } = this.props;
     return (
-      <React.Fragment>
+      <React.Fragment className="container-countdown">
         <h2>COMING SOON</h2>
         <h3 className="filmTitle">Aquaman</h3>
         <p>December 21</p>
