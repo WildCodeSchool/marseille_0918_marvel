@@ -8,6 +8,11 @@ import CardSuperId from "./CardSuperId";
 import CardPhysical from "./CardPhysical";
 import CardStats from "./CardStats";
 import CardAffiliation from "./Affiliation";
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+import Router from '../Router';
+import { Link } from 'react-router-dom';
+import Modal from '../Modal/Modal';
 
 export default class Hero extends Component {
   constructor(props) {
@@ -41,12 +46,7 @@ export default class Hero extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://www.superheroapi.com/api.php/10217009184163084/481`
-        // .get(
-        //   `http://www.superheroapi.com/api.php/10217009184163084/${
-        //     this.props.match.params.id
-        //   }`
-      )
+        `http://www.superheroapi.com/api.php/10217009184163084/${this.props.match.params.id}`)
       .then(response => {
         const heroData = response.data;
         this.setState({
@@ -56,8 +56,11 @@ export default class Hero extends Component {
   }
 
   render() {
+    
     if (this.state.hero.name) {
       return (
+        <React.Fragment>
+        <NavBar />
         <div className="card-container">
           <header>
             <h2>{this.state.hero.name}</h2>
@@ -118,6 +121,8 @@ export default class Hero extends Component {
             </div>
           </section>
         </div>
+        <Footer/>
+        </React.Fragment>
       );
     }
     return null;

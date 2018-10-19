@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import './Search.scss';
+import Router from '../Router'
 import { Link } from 'react-router-dom';
 
 //////////////////////////////////////// CLASS /////////////////////////////////
@@ -52,8 +53,8 @@ class Search extends React.Component {
 
     render(){
         return ( 
+            <React.Fragment>
 
-            <div>
                 
                 <input 
                     className="form-control form-control-lg"
@@ -82,23 +83,26 @@ class Search extends React.Component {
                                 if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
 
                                     return (
-                                        
-                                        <Link to={`/character/${character.id}`} >
-                                            <li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>
+                                                                                
+                                            <Link to={`/character/${character.id}`} >
+                                                <li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>
 
-                                        </Link>
+                                            </Link>
+                                        
                                     )
                                 } else {
-
-                                    return (<li>{character.name}</li>)
-
+                                    return (
+                                    <Link to={`/character/${character.id}`} >
+                                        <li>{character.name}</li>
+                                    </Link>
+                                    )
                                 }
                             }
                         }
                     })}
                 </ul>
                 }
-            </div>
+            </React.Fragment>
         )
     }
 }

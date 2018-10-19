@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardPhysical extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     let eyes;

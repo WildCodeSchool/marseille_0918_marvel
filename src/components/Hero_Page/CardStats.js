@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 export default class CardStats extends Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     let intelligence;
