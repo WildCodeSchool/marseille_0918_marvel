@@ -8,7 +8,7 @@ import CardSuperId from "./CardSuperId";
 import CardPhysical from "./CardPhysical";
 import CardStats from "./CardStats";
 import CardAffiliation from "./Affiliation";
-import NavBar from '../NavBar/NavBar';
+import NavBar from '../NavBar/NavBar'
 import Footer from '../Footer/Footer';
 import Router from '../Router';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,8 @@ export default class Hero extends Component {
     super(props);
 
     this.state = {
-      hero: []
+      hero: [],
+      currentID: ""
     };
   }
 
@@ -52,6 +53,7 @@ export default class Hero extends Component {
         this.setState({
           hero: heroData
         });
+        this.setState({currentID: this.state.hero.id})
       });
   }
 
@@ -123,7 +125,7 @@ export default class Hero extends Component {
         </div>
         <Footer/>
         </React.Fragment>
-      );
+      );      
     }
     return null;
   }

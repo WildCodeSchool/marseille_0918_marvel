@@ -54,7 +54,6 @@ class Search extends React.Component {
     render(){
         return ( 
             <React.Fragment>
-
                 
                 <input 
                     className="form-control form-control-lg"
@@ -74,17 +73,18 @@ class Search extends React.Component {
                     this.state.characters.map((character, index) => {
 
                         // Regex Affiche personnage Comics
-                        if(/\bmarvel\b|\bcomics\b|\bsharon carter\b/gi.test(character.biography.publisher)){
+                        if(/\bmarvel\b|\bcomics\b|\bsharon carter\b|\bphoenix\b/gi.test(character.biography.publisher)){
 
                             // Filtre les 10 premiers
                             if(index < 10) {
 
                                 // Condition affichage name (full name)
                                 if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
+                                    
 
                                     return (
                                                                                 
-                                            <Link to={`/character/${character.id}`} >
+                                            <Link to={`/character/${character.id}`} onClick={`/character/${character.id}`} >
                                                 <li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>
 
                                             </Link>
@@ -92,7 +92,7 @@ class Search extends React.Component {
                                     )
                                 } else {
                                     return (
-                                    <Link to={`/character/${character.id}`} >
+                                    <Link to={`/character/${character.id}`} onClick={`/character/${character.id}`}>
                                         <li>{character.name}</li>
                                     </Link>
                                     )
