@@ -60,6 +60,7 @@ class PopUp extends React.Component {
                     <a href="#" onClick={this.closeModal} className="ButtonClose">
                         <img src={Cross} alt="Close" className="Close" />
                     </a>
+                    {/* <Route path="/search" component={Search}/> */}
                     <Search />
 
                 </Modal>

@@ -11,6 +11,26 @@
     justify-content: flex-end;
     margin-bottom: 10px;
 }
+.ListSearch {
+    ul {
+        list-style: none;    
+        color:black;
+        
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+        background-color: rgba(34, 34, 34, 0.2);
+        border-radius: 5px;
+        display: block;
+        color: black;
+    }
+}
 
 @media screen and (max-width: 576px) {
 
