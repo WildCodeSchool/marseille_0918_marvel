@@ -1,4 +1,8 @@
-@import '../Fonts.scss';
+///// IMPORT VARIABLES SCSS /////
+
+@import '../Variables.scss';
+
+////// MEDIA QUERIES //////
 
 @media screen and (max-width: 576px) {
     .Navbar {
@@ -6,7 +10,7 @@
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         align-items: center;
-        background-color: #323333;
+        background-color: $color-black;
         height: 20vw;
 
         .LabelIcon {
@@ -50,16 +54,16 @@
         }
 
         .LabelIcon {
-            font: 100% $font-bangers;
-            color: white;
-            text-shadow: #323333 1px 1px, #323333 -1px 1px, #323333 -1px -1px, #323333 1px -1px;
+            font-family: $font-bangers;
+            color: $color-white;
+            text-shadow: $color-black 1px 1px, $color-black -1px 1px, $color-black -1px -1px, $color-black 1px -1px;
             font-size: 1.5vw;
         }
 
         .Home {
             z-index: 1;
             width: 3.5vw;
-            background-color: rgba(242, 143, 24,0.8);
+            background-color: $color-yellow;
             border-radius: 5px;
             padding: 0.7vw;
             grid-column: 1;
@@ -72,16 +76,16 @@
         .Search {
             z-index: 1;
             width: 3.5vw;
-            background-color: rgba(242, 143, 24,0.8);
+            background-color: $color-yellow;
             border-radius: 5px;
             padding: 0.7vw;
             grid-column: 3;
         }
         .Home:hover {
-            background-color:rgb(31, 117, 185);
+            background-color: $color-blue;
         }
         .Search:hover {
-            background-color:rgb(31, 117, 185);    
+            background-color: $color-blue; 
         }
 
     }

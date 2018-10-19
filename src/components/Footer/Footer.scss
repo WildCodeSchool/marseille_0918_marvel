@@ -1,3 +1,9 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../Variables.scss';
+
+/////// MEDIA QUERIES //////
+
 @media screen and (max-width: 576px) {
     .Foot {
         display: grid;
@@ -19,9 +25,10 @@
             font-size: 1vw;
             grid-column: 1 / 4;
             z-index: 1;
-            color:black;
+            color: $color-black;
             font-size: 4vw;
             grid-row: 2;
+            font-family: $font-PT;
         }
     
         .icons {
@@ -72,10 +79,11 @@
             text-align: center;
             font-size: 1vw;
             z-index: 1;
-            color:white;
+            color: $color-white;
             font-size: 1.5vw;
             margin-bottom: -17.5vw;
             grid-column: 2;
+            font-family: $font-PT;
         }
     
         .icons {

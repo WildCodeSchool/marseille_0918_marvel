@@ -1,3 +1,9 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../Variables.scss';
+
+//////// MODAL ///////
+
 .SearchModal {
     z-index: 1;
 }
@@ -14,13 +20,14 @@
 .ListSearch {
     ul {
         list-style: none;    
-        color:black;
+        color: $color-black;
         
     }
     
     a {
+        font-family: $font-PT;
         text-decoration: none;
-        color: black;
+        color: $color-black;
     }
 
     a:hover {

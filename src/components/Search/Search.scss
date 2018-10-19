@@ -1,8 +1,15 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../Variables.scss';
+
+//////// MEDIA QUERIES ///////
+
 @media screen and (max-width: 576px) {
 
     .form-control {
         font-size: 4vw !important;
         height: 8vw !important;
+        font-family: $font-PT;
     }
 }
 
@@ -11,6 +18,7 @@
     .form-control {
         font-size: 3vw !important;
         height: 6vw !important;
+        font-family: $font-PT;
     }
 }
 
@@ -19,6 +27,7 @@
     .form-control {
         font-size: 2.5vw !important;
         height: 4.5vw !important;
+        font-family: $font-PT;
     }
 }
 
@@ -27,5 +36,6 @@
     .form-control {
         font-size: 2vw !important;
         height: 3vw !important;
+        font-family: $font-PT;
     }
 }
