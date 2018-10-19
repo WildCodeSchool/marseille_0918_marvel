@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Article from "./components/article/Article";
 
 import Background from "./bg.jpg";
+import Hero from "./components/Hero_Page/Hero";
 
 class App extends Component {
   render() {

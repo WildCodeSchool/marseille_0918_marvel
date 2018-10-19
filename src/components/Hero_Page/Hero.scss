@@ -1,0 +1,75 @@
+// Component Container
+.card-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Grid Container for everything below the publisher name
+  .card-grid-container {
+    width: 65vw;
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+
+    // Left column of the grid
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    // Right column of the grid
+    .rightSide {
+      .idCard {
+        border: 1px solid #113971;
+        border-radius: 15px;
+        margin: 15px;
+        padding: 10px;
+        background-color: #1f75b980;
+        color: #113971;
+      }
+
+      h4 {
+        color: #f3f3f3;
+        padding: 0;
+        margin: 0;
+        font-weight: 900;
+      }
+
+      h4:hover {
+        cursor: pointer;
+      }
+
+      ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+
+        li {
+          text-align: start;
+          width: 100%;
+          text-align: justify;
+        }
+
+        li:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// *********** M E D I A   Q U E R I E S ***********
+
+@media only screen and (min-width: 576px) {
+  .card-container {
+    .card-grid-container {
+      grid-template-columns: minmax(150px, 1fr) 1fr;
+    }
+  }
+}
