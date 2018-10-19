@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import './Search.scss'
+import './Search.scss';
+import { Link } from 'react-router-dom';
 
 //////////////////////////////////////// CLASS /////////////////////////////////
 
@@ -17,13 +18,13 @@ class Search extends React.Component {
     }
 
     minInput(e) {
-        let affichage = e.target.value.replace(/[*_,/@éàè><;:?!$§%ùµø.]/i, "")
-        e.target.value = affichage;
-        if (e.target.value.length >= 1) {
+        let affichage = e.target.value;
+        affichage = affichage.replace(/[*_,/@éàè><;:?!$§%ùµø.]/i, "")
+        if (affichage.length >= 1) {
             return (
                 this.startRequest()
             )
-        } else if (e.target.value.length < 1) {
+        } else if (affichage.length < 1) {
             this.setState({characters: []})
         }
     }
@@ -80,8 +81,13 @@ class Search extends React.Component {
                                 // Condition affichage name (full name)
                                 if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
 
-                                    return (<li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>)
+                                    return (
+                                        
+                                        <Link to={`/character/${character.id}`} >
+                                            <li>{character.name} <span className="FullName">({character.biography["full-name"]})</span></li>
 
+                                        </Link>
+                                    )
                                 } else {
 
                                     return (<li>{character.name}</li>)
