@@ -90,7 +90,7 @@ export default class CardAffiliation extends Component {
           <li>
             <strong>Relatives:</strong>{" "}
             <ol>
-              {console.log(this.props.relatives.split(" "))}
+              {console.log(this.props.relatives.split("),"))}
               <li>{this.props.relatives}</li>
             </ol>
           </li>

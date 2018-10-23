@@ -44,9 +44,9 @@ export default class Hero extends Component {
       .then(response => {
         const heroData = response.data;
         this.setState({
-          hero: heroData
+          hero: heroData,
+          currentID: this.state.hero.id
         });
-        this.setState({ currentID: this.state.hero.id });
       });
   }
 
