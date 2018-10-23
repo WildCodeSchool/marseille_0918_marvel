@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardPhysical extends Component {
-
   render() {
     let eyes;
     let hair;
@@ -40,9 +39,12 @@ export default class CardPhysical extends Component {
 
     if (eyes || hair || height || weight) {
       card = (
-        <div className="idCard">
+        <div
+          onClick={e => this.props.hideGivenList("physicalList", e)}
+          className="idCard"
+        >
           <h4 onClick={this.props.funcDisplayTogg}>Physical Card</h4>
-          <ul onClick={this.props.funcHideMe}>
+          <ul style={{ display: "none" }} id="physicalList">
             {eyes}
             {hair}
             {height}

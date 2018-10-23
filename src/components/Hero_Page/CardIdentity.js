@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardIdentity extends Component {
-
   render() {
     let fullName;
     let race;
@@ -46,9 +45,12 @@ export default class CardIdentity extends Component {
     }
 
     return (
-      <div className="idCard">
+      <div
+        onClick={e => this.props.hideGivenList("idList", e)}
+        className="idCard"
+      >
         <h4 onClick={this.props.funcDisplayTogg}>Identity Card</h4>
-        <ul onClick={this.props.funcHideMe}>
+        <ul style={{ display: "none" }} id="idList">
           {fullName}
           {race}
           {gender}

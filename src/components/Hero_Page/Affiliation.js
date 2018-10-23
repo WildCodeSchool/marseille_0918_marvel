@@ -30,9 +30,6 @@ export default class CardAffiliation extends Component {
     let relatives;
     let firstAppearance;
     let card;
-    // let url = `http://www.superheroapi.com/api.php/10217009184163084/${
-    //   this.props.id
-    // }/connections`;
 
     // If there is something to show:
     if (this.props.group !== "-") {
@@ -92,30 +89,37 @@ export default class CardAffiliation extends Component {
         relatives = (
           <li>
             <strong>Relatives:</strong>{" "}
-            {this.props.relatives
-              .split("),")
-              .slice(0, 2)
-              .join("),")}
-            {/* here I had some troubles 'cause sometimes there were an ) at the end and sometimes not, the line below is supposed to see if there is one, if not one will be added if yes then none will be added*/}
-            {this.props.relatives[1] !== ")" && <span>)</span>}
-            {this.state.showMoreRelative ? (
-              <span>
-                {this.props.relatives
-                  .split("),")
-                  .slice(2, 3)
-                  .join("),")}
-                {/* same story here than just above about the ) */}
-                {this.props.relatives[4] !== ")" && <span>)</span>}
-                <span onClick={() => this.toggleRelative()}>
-                  CLICK FOR LESS!!!
-                </span>
-              </span>
-            ) : (
-              <span onClick={() => this.toggleRelative()}>
-                CLICK FOR MORE!!!
-              </span>
-            )}
+            <ol>
+              {console.log(this.props.relatives.split(" "))}
+              <li>{this.props.relatives}</li>
+            </ol>
           </li>
+          // <li>
+          //   <strong>Relatives:</strong>{" "}
+          //   {this.props.relatives
+          //     .split("),")
+          //     .slice(0, 2)
+          //     .join("),")}
+          //   {/* here I had some troubles 'cause sometimes there were an ) at the end and sometimes not, the line below is supposed to see if there is one, if not one will be added if yes then none will be added*/}
+          //   {this.props.relatives[1] !== ")" && <span>)</span>}
+          //   {this.state.showMoreRelative ? (
+          //     <span>
+          //       {this.props.relatives
+          //         .split("),")
+          //         .slice(2, 3)
+          //         .join("),")}
+          //       {/* same story here than just above about the ) */}
+          //       {this.props.relatives[4] !== ")" && <span>)</span>}
+          //       <span onClick={() => this.toggleRelative()}>
+          //         CLICK FOR LESS!!!
+          //       </span>
+          //     </span>
+          //   ) : (
+          //     <span onClick={() => this.toggleRelative()}>
+          //       CLICK FOR MORE!!!
+          //     </span>
+          //   )}
+          // </li>
         );
       }
     }
@@ -128,9 +132,12 @@ export default class CardAffiliation extends Component {
     }
     if (group || relatives || firstAppearance) {
       card = (
-        <div className="idCard">
-          <h4 onClick={this.props.funcDisplayTogg}>Affiliation Card</h4>
-          <ul onClick={this.props.funcHideMe}>
+        <div
+          onClick={e => this.props.hideGivenList("affiliationList", e)}
+          className="idCard"
+        >
+          <h4>Affiliation Card</h4>
+          <ul style={{ display: "none" }} id="affiliationList">
             {group}
             {relatives}
             {firstAppearance}

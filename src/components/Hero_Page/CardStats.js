@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardStats extends Component {
-
-
   render() {
     let intelligence;
     let power;
@@ -41,9 +39,12 @@ export default class CardStats extends Component {
 
     if (intelligence || power || combat || speed) {
       card = (
-        <div className="idCard">
+        <div
+          onClick={e => this.props.hideGivenList("statsList", e)}
+          className="idCard"
+        >
           <h4 onClick={this.props.funcDisplayTogg}>Statistics Card</h4>
-          <ul onClick={this.props.funcHideMe}>
+          <ul style={{ display: "none" }} id="statsList">
             {intelligence}
             {power}
             {combat}

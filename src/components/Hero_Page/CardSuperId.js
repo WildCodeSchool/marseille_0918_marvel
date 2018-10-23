@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardSuperId extends Component {
-
-
   render() {
     let alignment;
     let firstAppearance;
@@ -26,19 +24,25 @@ export default class CardSuperId extends Component {
       aliases = (
         <li>
           <strong>Aliases:</strong>
-          <ul>
+          <ol>
             {this.props.aliases.map(
-              (alias, idx) => idx < 4 && <li key={idx}>{alias}</li>
+              (alias, idx) => (
+                <li key={idx}>{alias}</li>
+              )
+              // (alias, idx) => idx < 4 && <li key={idx}>{alias}</li>
             )}
-          </ul>
+          </ol>
         </li>
       );
     }
 
     return (
-      <div className="idCard">
+      <div
+        onClick={e => this.props.hideGivenList("superIdList", e)}
+        className="idCard"
+      >
         <h4 onClick={this.props.funcDisplayTogg}>Super Identity Card</h4>
-        <ul onClick={this.props.funcHideMe}>
+        <ul style={{ display: "none" }} id="superIdList">
           {alignment}
           {aliases}
           {firstAppearance}
