@@ -6,7 +6,6 @@ import Menu from "./Menu/menu";
 import CountdownSection from "./Countdown/CountdownSection";
 import Article from "./article/Article";
 import Footer from "./Footer/Footer";
-import Background from "../bg.jpg";
 
 class App extends Component {
     render() {
