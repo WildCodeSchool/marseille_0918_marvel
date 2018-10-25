@@ -26,11 +26,11 @@ export default class Hero extends Component {
 
   hideGivenList(id, e) {
     if (
-      e.target.textContent !== "CLICK FOR MORE!!!" &&
-      e.target.textContent !== "CLICK FOR LESS!!!"
+      !e.target.className.includes("cardBtnMore") &&
+      !e.target.className.includes("cardBtnLess")
     ) {
       let list = document.getElementById(id);
-      list.style.display = list.style.display == "none" ? "flex" : "none";
+      list.style.display = list.style.display === "none" ? "flex" : "none";
     }
   }
 

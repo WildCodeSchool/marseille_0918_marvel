@@ -32,6 +32,11 @@
         background-color: #1f75b980;
         color: #113971;
       }
+      .idCard:hover {
+        background-color: #f28f1880;
+        border: 1px solid #f28f18;
+        color: #1f75b9;
+      }
 
       h4 {
         color: #f3f3f3;
@@ -68,7 +73,7 @@
 
 // *********** M E D I A   Q U E R I E S ***********
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 670px) {
   .card-container {
     .card-grid-container {
       grid-template-columns: minmax(150px, 1fr) 1fr;

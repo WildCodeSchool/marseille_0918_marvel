@@ -8,35 +8,47 @@ export default class CardPhysical extends Component {
     let weight;
     let card;
 
+    // * * * * * * * * * *   LET'S DEFINE EYES:   * * * * * * * * * * //
     if (this.props.eyes !== "-") {
       eyes = (
         <li>
-          <strong>Eye-color:</strong> {this.props.eyes}
-        </li>
-      );
-    }
-    if (this.props.height !== "0 cm") {
-      height = (
-        <li>
-          <strong>Height:</strong> {this.props.height}
-        </li>
-      );
-    }
-    if (this.props.weight !== "0 kg") {
-      weight = (
-        <li>
-          <strong>Weight:</strong> {this.props.weight}
-        </li>
-      );
-    }
-    if (this.props.hair !== "-") {
-      hair = (
-        <li>
-          <strong>Hair-color:</strong> {this.props.hair}
+          <strong className="cardDetailSubTitle">Eye-color:</strong>{" "}
+          {this.props.eyes}
         </li>
       );
     }
 
+    // * * * * * * * * * *   LET'S DEFINE HEIGHT:   * * * * * * * * * * //
+    if (this.props.height !== "0 cm") {
+      height = (
+        <li>
+          <strong className="cardDetailSubTitle">Height:</strong>{" "}
+          {this.props.height}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   LET'S DEFINE WEIGHT:   * * * * * * * * * * //
+    if (this.props.weight !== "0 kg") {
+      weight = (
+        <li>
+          <strong className="cardDetailSubTitle">Weight:</strong>{" "}
+          {this.props.weight}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   LET'S DEFINE HAIR:   * * * * * * * * * * //
+    if (this.props.hair !== "-") {
+      hair = (
+        <li>
+          <strong className="cardDetailSubTitle">Hair-color:</strong>{" "}
+          {this.props.hair}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   IF THERE IS AT LEAST ONE INFORMATION IN ONE OF THESE GROUPS THE DIV WILL APPEAR ON SCREEN... ELSE IT WILL NOT   * * * * * * * * * * //
     if (eyes || hair || height || weight) {
       card = (
         <div
