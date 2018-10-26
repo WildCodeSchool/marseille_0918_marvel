@@ -89,7 +89,6 @@ export default class CardSuperId extends Component {
 
                 {/* * * * * *  AND WE CAND FIND A SPAN TO ALLOW US TO HIDE THOSE NEXT ELEMENTS  * * * * * */}
                 <span>
-                  See Less...
                   <i
                     className="far fa-arrow-alt-circle-up cardBtnLess"
                     onClick={() => this.toggleAliases()}
@@ -99,7 +98,6 @@ export default class CardSuperId extends Component {
             ) : (
               // * * * * * IF showMoreAliases IS FALSE WE GO BACK TO THE 4 FIRST <P>s WE SEE AN ARROW ICON:  * * * * * //
               <span>
-                See More...
                 <i
                   className="far fa-arrow-alt-circle-down cardBtnMore"
                   onClick={() => this.toggleAliases()}
