@@ -13,7 +13,7 @@ export default class CardAffiliation extends Component {
   // This works with the props showMoreRelatve and showMoreAffilation
   // And the event listener is added to the arrows up and down
 
-  toggleRelative(e) {
+  toggleRelative() {
     this.setState({
       showMoreRelative: !this.state.showMoreRelative
     });
@@ -26,114 +26,176 @@ export default class CardAffiliation extends Component {
   }
 
   render() {
-    let group;
+    let groups;
     let relatives;
-    let firstAppearance;
     let card;
-    // let url = `http://www.superheroapi.com/api.php/10217009184163084/${
-    //   this.props.id
-    // }/connections`;
+    let separator;
 
-    // If there is something to show:
+    // * * * * * * * * * *   LET'S DEFINE GROUPS (AFFILIATION GROUP):   * * * * * * * * * * //
+
     if (this.props.group !== "-") {
-      // If there is less than 3 group affiliation to show
-      if (this.props.group.split(";").length < 2) {
-        group = (
-          // we show them normaly All in a li
+      // * * * * * IF THERE IS 5 OR LESS GROUP AFFILIATIONS EACH OF THEM APPEAR IN A <P> * * * * * //
+
+      if (this.props.group.split(",").length < 5) {
+        groups = (
           <li>
-            <strong>Group Affiliation:</strong> {this.props.group}
+            <strong className="cardDetailSubTitle">Affiliation:</strong>
+            {this.props.group.split(",").map((group, idx) => (
+              <p className="cardApiInfo" key={idx}>
+                {group}
+              </p>
+            ))}
           </li>
         );
-        // If there is more to show
+
+        // * * * * * IF THERE ARE MORE THAN 5 GROUP AFFILIATIONS: * * * * * //
       } else {
-        group = (
-          // we show only the first one (let's if we want to show more)
+        groups = (
           <li>
-            <strong>Group Affiliation:</strong>{" "}
-            {this.props.group
-              .split(";")
-              .slice(0, 1)
-              .join(";")}
+            <strong className="cardDetailSubTitle">Affiliation:</strong>
+
+            {/*   * * * * * 4 OF THEM EACH APPEAR IN A <P>  * * * * *   */}
+            {this.props.group.split(",").map(
+              (group, idx) =>
+                idx < 4 && (
+                  <p className="cardApiInfo" key={idx}>
+                    {group}
+                  </p>
+                )
+            )}
+
+            {/*   * * * * * AND THEN WE CHECK IF showMoreAffiliation IS TRUE OR FALSE:  * * * * *   */}
             {this.state.showMoreAffiliation ? (
-              // and we hide the next ones we will show only if the props showMoreAffiliation (condition line above) is true
-              <span>
-                {this.props.group
-                  .split(";")
-                  .slice(1, 4)
-                  .join(";")}{" "}
-                <span
-                  onClick={
-                    () =>
-                      this.toggleAffiliation() /**is also hidden in there an icon that will allow us to hide it back when it's displayed */
-                  }
-                >
-                  CLICK FOR LESS!!!
+              // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
+              <React.Fragment>
+                {this.props.group.split(",").map(
+                  (group, idx) =>
+                    idx > 3 &&
+                    idx < 10 && (
+                      <p className="cardApiInfo" key={idx}>
+                        {group}
+                      </p>
+                    )
+                )}
+
+                {/* * * * * *  AND WE CAND FIND A SPAN TO ALLOW US TO HIDE THOSE NEXT ELEMENTS  * * * * * */}
+                <span>
+                  See Less...
+                  <i
+                    className="far fa-arrow-alt-circle-up cardBtnLess"
+                    onClick={() => this.toggleAffiliation()}
+                  />
                 </span>
-              </span>
+              </React.Fragment>
             ) : (
-              // Else if showMoreAffiliation is false, then we can only see the icon below that will allow us to change showMoreAffiliation to true if we click on it
-              <span onClick={() => this.toggleAffiliation()}>
-                CLICK FOR MORE!!!
+              // * * * * * IF showMoreAffiliation IS FALSE WE GO BACK TO THE 4 FIRST <P>s WE SEE AN ARROW ICON:  * * * * * //
+              <span>
+                See More...
+                <i
+                  className="far fa-arrow-alt-circle-down cardBtnMore"
+                  onClick={() => this.toggleAffiliation()}
+                />
               </span>
             )}
           </li>
         );
       }
     }
-    // hoping that the explanations above were understanable 'cause it's the same idea for this next part
+
+    // * * * * * * * * * *   LET'S DEFINE RELATIVES:   * * * * * * * * * * //
+
     if (this.props.relatives !== "-") {
-      if (this.props.relatives.split("),").length < 2) {
+      // * * * * *  FIRST WE NEED TO FIND THE SEPARATOR IN THE STRING WHICH IS NOT ALWAYS THE SAME  * * * * * //
+      if (this.props.relatives.includes(");")) {
+        separator = ");";
+      } else {
+        separator = "),";
+      }
+
+      // * * * * * IF THERE IS 5 OR LESS RELATIVES EACH OF THEM APPEAR IN A <P> * * * * * //
+      if (this.props.relatives.split(separator).length < 5) {
         relatives = (
           <li>
-            <strong>Relatives:</strong> {this.props.relatives}
+            <strong className="cardDetailSubTitle">Relatives:</strong>{" "}
+            {this.props.relatives.split(separator).map(
+              (relative, idx) =>
+                // THIS CONDITION IS ONLY THERE BECAUSE OF A ) THAT WAS MISSING IN ALL BUT ONE <P> IN ONE CASE, OR BECAUSE THERE WAS ONE TOO MUCH IN THE LAST <P> IN THE OTHER CASE
+                idx === this.props.relatives.split(separator).length - 1 ? (
+                  <p className="cardApiInfo" key={idx}>
+                    {relative}
+                  </p>
+                ) : (
+                  <p className="cardApiInfo" key={idx}>
+                    {relative})
+                  </p>
+                )
+            )}
           </li>
         );
+
+        // * * * * * IF THERE IS MORE THAN 5 relatives: * * * * * //
       } else {
         relatives = (
           <li>
-            <strong>Relatives:</strong>{" "}
-            {this.props.relatives
-              .split("),")
-              .slice(0, 2)
-              .join("),")}
-            {/* here I had some troubles 'cause sometimes there were an ) at the end and sometimes not, the line below is supposed to see if there is one, if not one will be added if yes then none will be added*/}
-            {this.props.relatives[1] !== ")" && <span>)</span>}
+            <strong className="cardDetailSubTitle">Relatives:</strong>{" "}
+            {/*   * * * * * 4 OF THEM EACH APPEAR IN A <LI>  * * * * *   */}
+            {this.props.relatives.split(separator).map(
+              (relative, idx) =>
+                idx < 4 && (
+                  <p className="cardApiInfo" key={idx}>
+                    {relative})
+                  </p>
+                )
+            )}
+            {/*   * * * * * AND THEN WE CHECK IF showMoreAffiliation IS TRUE OR FALSE:  * * * * *   */}
             {this.state.showMoreRelative ? (
-              <span>
-                {this.props.relatives
-                  .split("),")
-                  .slice(2, 3)
-                  .join("),")}
-                {/* same story here than just above about the ) */}
-                {this.props.relatives[4] !== ")" && <span>)</span>}
-                <span onClick={() => this.toggleRelative()}>
-                  CLICK FOR LESS!!!
+              // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
+              <React.Fragment>
+                {this.props.relatives.split(separator).map(
+                  (relative, idx) =>
+                    idx > 3 &&
+                    idx < 10 && (
+                      <p className="cardApiInfo" key={idx}>
+                        {relative})
+                      </p>
+                    )
+                )}
+
+                {/* * * * * *  AND WE CAND FIND A SPAN TO ALLOW US TO HIDE THOSE NEXT ELEMENTS  * * * * * */}
+                <span>
+                  See Less...
+                  <i
+                    className="far fa-arrow-alt-circle-up cardBtnMore"
+                    onClick={() => this.toggleRelative()}
+                  />
                 </span>
-              </span>
+              </React.Fragment>
             ) : (
-              <span onClick={() => this.toggleRelative()}>
-                CLICK FOR MORE!!!
+              // * * * * * IF showMoreRelative IS FALSE WE GO BACK TO THE 4 FIRST <P>s WE A SEE MORE SPAN:  * * * * * //
+              <span>
+                See More...
+                <i
+                  className="far fa-arrow-alt-circle-down cardBtnMore"
+                  onClick={() => this.toggleRelative()}
+                />
               </span>
             )}
           </li>
         );
       }
     }
-    if (this.props.firstAppearance !== "-") {
-      firstAppearance = (
-        <li>
-          <strong>First-appearance:</strong> {this.props.firstAppearance}
-        </li>
-      );
-    }
-    if (group || relatives || firstAppearance) {
+
+    // * * * * * * * * * *   IF THERE IS AT LEAST ONE INFORMATION IN ONE OF THESE GROUPS THE DIV WILL APPEAR ON SCREEN... ELSE IT WILL NOT   * * * * * * * * * * //
+    if (groups || relatives) {
       card = (
-        <div className="idCard">
-          <h4 onClick={this.props.funcDisplayTogg}>Affiliation Card</h4>
-          <ul onClick={this.props.funcHideMe}>
-            {group}
+        <div
+          onClick={e => this.props.hideGivenList("affiliationList", e)}
+          className="idCard"
+        >
+          <h4>Affiliation Card</h4>
+          <ul style={{ display: "none" }} id="affiliationList">
+            {groups}
             {relatives}
-            {firstAppearance}
           </ul>
         </div>
       );

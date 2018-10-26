@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 export default class CardStats extends Component {
-
-
   render() {
     let intelligence;
     let power;
@@ -10,40 +8,55 @@ export default class CardStats extends Component {
     let speed;
     let card;
 
+    // * * * * * * * * * *   LET'S DEFINE INTELLIGENCE:   * * * * * * * * * * //
     if (this.props.intelligence !== "null") {
       intelligence = (
         <li>
-          <strong>Intelligence:</strong> {this.props.intelligence}
-        </li>
-      );
-    }
-    if (this.props.power !== "null") {
-      power = (
-        <li>
-          <strong>Power:</strong> {this.props.power}
-        </li>
-      );
-    }
-    if (this.props.combat !== "null") {
-      combat = (
-        <li>
-          <strong>Combat:</strong> {this.props.combat}
-        </li>
-      );
-    }
-    if (this.props.speed !== "null") {
-      speed = (
-        <li>
-          <strong>Speed:</strong> {this.props.speed}
+          <strong className="cardDetailSubTitle">Intelligence:</strong>{" "}
+          {this.props.intelligence}
         </li>
       );
     }
 
+    // * * * * * * * * * *   LET'S DEFINE POWER:   * * * * * * * * * * //
+    if (this.props.power !== "null") {
+      power = (
+        <li>
+          <strong className="cardDetailSubTitle">Power:</strong>{" "}
+          {this.props.power}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   LET'S DEFINE COMBAT:   * * * * * * * * * * //
+    if (this.props.combat !== "null") {
+      combat = (
+        <li>
+          <strong className="cardDetailSubTitle">Combat:</strong>{" "}
+          {this.props.combat}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   LET'S DEFINE SPEED:   * * * * * * * * * * //
+    if (this.props.speed !== "null") {
+      speed = (
+        <li>
+          <strong className="cardDetailSubTitle">Speed:</strong>{" "}
+          {this.props.speed}
+        </li>
+      );
+    }
+
+    // * * * * * * * * * *   IF THERE IS AT LEAST ONE INFORMATION IN ONE OF THESE GROUPS THE DIV WILL APPEAR ON SCREEN... ELSE IT WILL NOT   * * * * * * * * * * //
     if (intelligence || power || combat || speed) {
       card = (
-        <div className="idCard">
+        <div
+          onClick={e => this.props.hideGivenList("statsList", e)}
+          className="idCard"
+        >
           <h4 onClick={this.props.funcDisplayTogg}>Statistics Card</h4>
-          <ul onClick={this.props.funcHideMe}>
+          <ul style={{ display: "none" }} id="statsList">
             {intelligence}
             {power}
             {combat}
