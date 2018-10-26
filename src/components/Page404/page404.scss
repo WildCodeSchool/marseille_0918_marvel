@@ -1,0 +1,131 @@
+/************** IMPORT VARIABLES SCSS ******************/
+
+@import '../Variables.scss';
+
+
+.page404-container {
+
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: $color-white;
+
+    .img404left {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: flex-start;
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .text404right{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: center;
+        color: #222;
+
+        h1 {
+            font-family: $font-bangers;
+            text-transform: uppercase;
+            font-size: 8em;
+            letter-spacing: 6px;
+        }
+
+        .text404 {
+            font-size: 1.5em;
+            font-family: $font-PT;
+        }
+
+        .text404-p2 {
+            font-family: $font-PT;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        a {
+            background-color: $color-blue;
+            color: $color-white;
+            padding: 20px 25px;
+            border-radius: 4px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-family: $font-bangers;
+            font-size: 1.6em;
+            box-shadow: 4px 4px 4px #ccc;
+        }
+
+        a:hover {
+            background-color: $color-yellow;
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (min-width: 620px) and (max-width: 1149px) {
+
+    .page404-container {
+    
+        .img404left {
+            align-self: center;
+            margin-top: 0;
+
+            img {
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .text404right{
+            .text404 {
+                font-size: 2em;
+            }
+    
+        }
+    }
+}
+
+
+@media (min-width: 1150px) {
+
+    .page404-container {
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        height: 100vh;
+
+    
+        .img404left {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            align-self: center;
+            margin: 0;
+
+            img {
+                width: auto;
+                height: auto;
+            }
+
+        }
+    
+        .text404right{
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+    
+            .text404 {
+                font-size: 2em;
+            }
+    
+        }
+    }
+}

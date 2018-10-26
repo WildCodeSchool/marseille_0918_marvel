@@ -1,31 +1,56 @@
-@media screen and (max-width: 576px) {
+///// IMPORT VARIABLES SCSS /////
 
-    .form-control {
-        font-size: 4vw !important;
-        height: 8vw !important;
+@import '../Variables.scss';
+
+//////// SCSS ///////
+
+.form-control {
+    font-size: 4.5vh !important;
+    height: 6.5vh !important;
+    font-family: $font-PT;
+}
+
+.no-suggestions {
+    color: #999;
+    padding: 0.5rem;
+    font-family: $font-PT;
+    font-size: 4.2vh;
+}
+
+.suggestions {
+    border-top-width: 0;
+    list-style: none;
+    margin-top: 1vh;
+    overflow-y: auto;
+    padding-left: 0;
+    font-family: $font-PT;
+    font-size: 4.2vh;
+    text-decoration: none;
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    li {
+        padding: 0.7vh;
+        border-radius: 5px;
+        text-decoration-style: none;
+        color : $color-black;
+    }
+    
+    li:hover {
+        background-color: rgba($color: #222, $alpha: 0.2);
+        color: $color-black;
+        font-weight: 700;
     }
 }
 
-@media screen and (min-width: 576px) {
-
-    .form-control {
-        font-size: 3vw !important;
-        height: 6vw !important;
-    }
+.SearchLink {
+    text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
-
-    .form-control {
-        font-size: 2.5vw !important;
-        height: 4.5vw !important;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-
-    .form-control {
-        font-size: 2vw !important;
-        height: 3vw !important;
-    }
+.suggestion-active {
+    background-color: rgba($color: #222, $alpha: 0.2);
+    color: $color-black;
+    font-weight: 700;
 }
