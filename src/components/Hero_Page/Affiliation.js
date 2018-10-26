@@ -80,7 +80,7 @@ export default class CardAffiliation extends Component {
 
                 {/* * * * * *  AND WE CAND FIND A SPAN TO ALLOW US TO HIDE THOSE NEXT ELEMENTS  * * * * * */}
                 <span>
-                  See Less...
+
                   <i
                     className="far fa-arrow-alt-circle-up cardBtnLess"
                     onClick={() => this.toggleAffiliation()}
@@ -90,7 +90,7 @@ export default class CardAffiliation extends Component {
             ) : (
               // * * * * * IF showMoreAffiliation IS FALSE WE GO BACK TO THE 4 FIRST <P>s WE SEE AN ARROW ICON:  * * * * * //
               <span>
-                See More...
+
                 <i
                   className="far fa-arrow-alt-circle-down cardBtnMore"
                   onClick={() => this.toggleAffiliation()}
@@ -163,7 +163,6 @@ export default class CardAffiliation extends Component {
 
                 {/* * * * * *  AND WE CAND FIND A SPAN TO ALLOW US TO HIDE THOSE NEXT ELEMENTS  * * * * * */}
                 <span>
-                  See Less...
                   <i
                     className="far fa-arrow-alt-circle-up cardBtnMore"
                     onClick={() => this.toggleRelative()}
@@ -173,7 +172,6 @@ export default class CardAffiliation extends Component {
             ) : (
               // * * * * * IF showMoreRelative IS FALSE WE GO BACK TO THE 4 FIRST <P>s WE A SEE MORE SPAN:  * * * * * //
               <span>
-                See More...
                 <i
                   className="far fa-arrow-alt-circle-down cardBtnMore"
                   onClick={() => this.toggleRelative()}
