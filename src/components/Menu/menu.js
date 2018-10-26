@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import './menu.scss';
 
+import Home from '../Home';
+import {NavLink} from 'react-router-dom';
+import Router from '../Router';
+import Tops from './../Top/Top';
+
 // Import Images
 import Img1 from './pictures/hulk.jpg';
 import Img2 from './pictures/flash3.jpg';
@@ -9,10 +14,10 @@ import Img4 from './pictures/vs2.png';
 import Img5 from './pictures/venom.jpg';
 import logo from './pictures/logo.png';
 
-
 class Menu extends Component {
     render() {
         return (
+
         <div className="container-hexa">
 
             {/* Menu */}
@@ -23,12 +28,13 @@ class Menu extends Component {
                     <div className="front" style={{backgroundImage: `url(${Img4})`}}>
                     </div>
                     <div className="back">
+
                         <div className="details">
                             <h3>Marvel<br /><span>VS</span><br />DC Comics</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-            
+
                 {/* Top Heroes */}
                 <div className="btn-hexa" id="hexaTopLeft">
                     <div className="front" style={{backgroundImage: `url(${Img2})`}}>
@@ -36,8 +42,9 @@ class Menu extends Component {
                     <div className="back">
                         <div className="details">
                             <h3>Top 10 <br />SuperHeroes</h3>
+                            <NavLink className="link" to='/tops' onClick='/tops'></NavLink>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 {/* Index */}
@@ -48,7 +55,7 @@ class Menu extends Component {
                         <div className="details">
                             <h3>See Them All</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 {/* Top Vilains  */}
@@ -60,7 +67,7 @@ class Menu extends Component {
                         <div className="details">
                             <h3>Top 10<br />Vilains</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 {/* Top Smallest  */}
@@ -72,7 +79,7 @@ class Menu extends Component {
                         <div className="details">
                             <h3>Top 10<br />Smallest</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 {/* Top Biggest  */}
@@ -84,7 +91,7 @@ class Menu extends Component {
                         <div className="details">
                             <h3>Top 10<br />Biggest</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 {/* Top VS 2  */}
@@ -96,12 +103,13 @@ class Menu extends Component {
                         <div className="details">
                             <h3>X-Men<br /><span>VS</span><br />Avengers</h3>
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
             {/* END Menu */}
             </div>
         </div>
+
         )
     }
 }

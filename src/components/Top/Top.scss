@@ -1,10 +1,14 @@
 .bod {
   margin: 0;
-	padding: 0;
+  padding:0;
 	font-family: sans-serif;
 
+      .menu-smartphone{
+        display: none;
+      }
+
   ul {
-  //  position: absolute;
+    position: absolute;
     width: 100%;
     height: 100vh;
     background-color: #ccc;
@@ -23,11 +27,29 @@
         transition: 0.5s;
         overflow: hidden;
       }
+      li:hover {
+        cursor: pointer;
+      }
+
       li:nth-child(1) {
         	background: url("./Pictures/captainA.jpg") ;
         	background-position: left;
         	background-size: cover;
           width: 55%;
+          z-index: 1;
+
+          .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,.8);
+            box-sizing: border-box;
+            color: #fff;
+            opacity: 1;
+            transition: 0.5s;
+          }
+      }
       }
 
       li:nth-child(2) {
@@ -84,58 +106,181 @@
       	background-size: cover;
       }
 
-  li {
+      li {
 
-    h3{
-      color: #f3F3F3;
-      font-size: 1.5em;
-      text-align: center;
-      background: rgba(0,0,0,.44);
-      padding: 3px;
-      border-radius: 2px;
-      display: inline-block;
+        h3{
+          color: #f3F3F3;
+          font-size: 1.5em;
+          text-align: center;
+          background: rgba(0,0,0,.44);
+          padding: 3px;
+          border-radius: 2px;
+          display: inline-block;
 
-          span {
-            font-style: italic;
-            font-size: 0.7em;
-          }
-  }
+              span {
+                font-style: italic;
+                font-size: 0.7em;
+              }
+      }
 
-    .content {
-        position: absolute;
-      	bottom: -100%;
-      	left: 0;
-      	width: 100%;
-      	background: rgba(0,0,0,.8);
-      	box-sizing: border-box;
-      	color: #fff;
-      	opacity: 0;
-        transition: 0.5s;
-
-          h2 {
-            margin: 2.5%;
-          }
-
-    }
-  }
-
-  li:nth-child(1) {
-
-        .content {
+      .content {
           position: absolute;
-        	bottom: 0;
+        	bottom: -100%;
         	left: 0;
         	width: 100%;
         	background: rgba(0,0,0,.8);
         	box-sizing: border-box;
         	color: #fff;
-        	opacity: 1;
-  	      transition: 0.5s;
+        	opacity: 0;
+          transition: 0.5s;
+
+            h2 {
+              margin: 2.5%;
+            }
+      }
+      }
+      .fa-undo{
+        display: block;
+        z-index: 999;
+        position: relative;
+        top: 94vh;
+        padding: 1%;
+        color: #f28f18;
+      }
+}
+/** **************************** Responsive smartphones **************************** **/
+@media (max-width: 576px) {
+
+  .bod {
+    .menu-smartphone {
+      display: block;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 20vh;
+      margin: 5% 0% 8% 0%;
+
+        .num{
+          //border: 1px solid white;
+          text-align: center;
+          background-color: black;
+          color: white;
+          padding: 25%;
+          margin: 5%;
+          font-size: 0.8em;
+
+            span{
+              font-size: 0.6em;
+              font-style: italic;
+            }
         }
+    }
+
+    ul {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+        li {
+          list-style: none;
+          //position: relative;
+          width: 100%;
+          height:100%;
+          float: none;
+
+            h3{
+              display: none;
+            }
+            .content{
+              transition: 0.5s;
+            }
+        }
+
+        li:hover {
+          cursor: default;
+        }
+
+        li:nth-child(1){
+          width: 100%;
+          height: 320px;
+          background-position: center;
+          display: block;
+        }
+
+        li:nth-child(2) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(3) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(4) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(5) {
+          width: 100%;
+          height: 320px;
+        	display: none;
+          background-position: center;
+        }
+
+        li:nth-child(6) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(7) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(8) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(9) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+
+        li:nth-child(10) {
+          width: 100%;
+          height: 320px;
+          display: none;
+          background-position: center;
+        }
+    }
+    .fa-undo{
+      display: block;
+      text-align: center;
+      margin: 2%;
+      font-size: 3vh;
+      z-index: 999;
+      position: relative;
+      top:auto;
+      padding: 0;
+
+    }
   }
 }
-}
-  li:hover {
-    cursor: pointer;
-  }
-//cursor:pointor sur les li

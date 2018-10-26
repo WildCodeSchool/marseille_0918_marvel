@@ -23,6 +23,7 @@ class App extends Component {
             <section className="Container-article">
             <Article />
             </section>
+
             <Footer />
         </div>
         );

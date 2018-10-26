@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Article.scss'
+import './Article.scss';
 
 class Article extends Component {
   constructor(props){
