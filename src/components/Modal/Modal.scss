@@ -4,12 +4,16 @@
 
 //////// MODAL ///////
 
+.Search {
+    cursor: pointer;
+}
+
 .SearchModal {
     z-index: 1;
 }
 
 .Close {
-    height: 3.5vw;
+    height:5vh;
 }
 
 .ButtonClose {
@@ -60,7 +64,10 @@
         background: none !important;
         border: none !important;
         top: 48% !important;
+    }.ReactModal__Body--open {
+        overflow-y: hidden;
     }
+
 }
 
 @media screen and (min-width: 576px) {
@@ -85,6 +92,9 @@
         background: none !important;
         border: none !important;
         top: 46% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
     }
 }
 
@@ -111,6 +121,9 @@
         border: none !important;
         top: 46% !important;
     }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -134,6 +147,9 @@
         background: none !important;
         border: none !important;
         top: 48% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
     }
 }
 
@@ -160,6 +176,9 @@
         border: none !important;
         top: 52% !important;
     }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
 }
 
 @media screen and (min-width: 2560px) {
@@ -184,6 +203,9 @@
         background: none !important;
         border: none !important;
         top: 50% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
     }
 }
 
