@@ -13,7 +13,14 @@ export default class CardStats extends Component {
       intelligence = (
         <li>
           <strong className="cardDetailSubTitle">Intelligence:</strong>{" "}
-          {this.props.intelligence}
+          <div className="bar">
+            <div
+              className="bar-inner"
+              style={{ width: `${this.props.intelligence}%` }}
+            >
+              {this.props.intelligence}%
+            </div>
+          </div>
         </li>
       );
     }
@@ -23,7 +30,14 @@ export default class CardStats extends Component {
       power = (
         <li>
           <strong className="cardDetailSubTitle">Power:</strong>{" "}
-          {this.props.power}
+          <div className="bar">
+            <div
+              className="bar-inner"
+              style={{ width: `${this.props.power}%` }}
+            >
+              {this.props.power}%
+            </div>
+          </div>
         </li>
       );
     }
@@ -33,7 +47,14 @@ export default class CardStats extends Component {
       combat = (
         <li>
           <strong className="cardDetailSubTitle">Combat:</strong>{" "}
-          {this.props.combat}
+          <div className="bar">
+            <div
+              className="bar-inner"
+              style={{ width: `${this.props.combat}%` }}
+            >
+              {this.props.combat}%
+            </div>
+          </div>
         </li>
       );
     }
@@ -43,7 +64,14 @@ export default class CardStats extends Component {
       speed = (
         <li>
           <strong className="cardDetailSubTitle">Speed:</strong>{" "}
-          {this.props.speed}
+          <div className="bar">
+            <div
+              className="bar-inner"
+              style={{ width: `${this.props.speed}%` }}
+            >
+              {this.props.speed}%
+            </div>
+          </div>
         </li>
       );
     }
