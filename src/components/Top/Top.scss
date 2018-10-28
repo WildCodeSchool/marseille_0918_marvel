@@ -1,7 +1,8 @@
+@import '../Variables.scss';
 .bod {
   margin: 0;
   padding:0;
-	font-family: sans-serif;
+	font-family: $font-PT, sans-serif;
 
       .menu-smartphone{
         display: none;
@@ -32,8 +33,8 @@
       }
 
       li:nth-child(1) {
-        	background: url("./Pictures/captainA.jpg") ;
-        	background-position: left;
+        	background: url("./Pictures/jean.jpg") ;
+        	background-position: center;
         	background-size: cover;
           width: 55%;
           z-index: 1;
@@ -54,55 +55,55 @@
 
       li:nth-child(2) {
       	background: url("./Pictures/deathpool.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(3) {
       	background: url("./Pictures/hulk.jpg");
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(4) {
       	background: url("./Pictures/wolverine.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(5) {
       	background: url("./Pictures/captainM.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(6) {
       	background: url("./Pictures/invisibilityW.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(7) {
       	background: url("./Pictures/daredevil.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(8) {
       	background: url("./Pictures/punisher.jpg");
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(9) {
       	background: url("./Pictures/thor.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
       li:nth-child(10) {
       	background: url("./Pictures/spider.jpg") ;
-      	background-position: left;
+      	background-position: center;
       	background-size: cover;
       }
 
@@ -141,11 +142,13 @@
       }
       .fa-undo{
         display: block;
-        z-index: 999;
+        z-index: 9;
         position: relative;
         top: 94vh;
         padding: 1%;
-        color: #f28f18;
+        color: $color-yellow;
+        // background-color: $color-white;
+        // width: 20vh;
       }
 }
 /** **************************** Responsive smartphones **************************** **/
@@ -162,13 +165,14 @@
       margin: 5% 0% 8% 0%;
 
         .num{
-          //border: 1px solid white;
           text-align: center;
-          background-color: black;
+          background-color: $color-yellow;
           color: white;
           padding: 25%;
           margin: 5%;
           font-size: 0.8em;
+          border-radius: 35%;
+
 
             span{
               font-size: 0.6em;
@@ -184,7 +188,6 @@
 
         li {
           list-style: none;
-          //position: relative;
           width: 100%;
           height:100%;
           float: none;

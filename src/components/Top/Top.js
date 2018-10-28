@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Top.scss';
+import '../Variables.scss';
 import Router from '../Router';
 import Menu from '../Menu/menu';
 import Home from '../Home';
@@ -42,7 +43,7 @@ class Tops extends Component{
           })
         }
 } else {
-// Responsive(){
+// responsive 
   const getSiblings = (elem) => {
     let siblings = [];
     let sibling = elem.parentNode.firstChild;
@@ -68,7 +69,7 @@ class Tops extends Component{
 
     let nuSiblings = getSiblings(num[i]);
     nuSiblings.map( (sibling) => {
-        sibling.style.background = "black";
+        sibling.style.background = "#f28f18";
         lis[i].style.width = "100%";
     })
         let contentSibling = sibling.lastElementChild;
@@ -78,7 +79,7 @@ class Tops extends Component{
             content.style.bottom = "0";
             content.style.opacity = "1";
             content.style.transitionDelay= "0.5s";
-            num[i].style.background= "red";
+            num[i].style.background= "#113971";
     })
     let hover = lis[i].addEventListener('click', (e) => {
         lis[i].style.width = "100%";
@@ -111,7 +112,7 @@ class Tops extends Component{
           <li className="li-10" onClick={this.GetSiblings}>
             <h3>10<span>th</span></h3>
             <div className="content">
-              <h2>Cpt America</h2>
+              <h2>Jean Grey</h2>
             </div>
           </li>
           <li className="li-9" onClick={this.GetSiblings}>
