@@ -14,7 +14,7 @@ import Router from "../Router";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 
-import ImgHeader from './headerimg.jpg';
+import ImgHeader from "./headerimg.jpg";
 
 export default class Hero extends Component {
   constructor(props) {
@@ -58,7 +58,10 @@ export default class Hero extends Component {
         <React.Fragment>
           <NavBar />
           <div className="card-container">
-            <header className="header-hero" style={{backgroundImage: `url(${ImgHeader})`}}>
+            <header
+              className="header-hero"
+              style={{ backgroundImage: `url(${ImgHeader})` }}
+            >
               <h2>{this.state.hero.name}</h2>
               <h4>{this.state.hero.biography.publisher}</h4>
             </header>
