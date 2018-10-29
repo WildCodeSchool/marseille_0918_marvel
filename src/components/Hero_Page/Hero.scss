@@ -1,7 +1,6 @@
 ///// IMPORT VARIABLES SCSS /////
 
-@import '../Variables.scss';
-
+@import "../Variables.scss";
 
 // Component Container
 .card-container {
@@ -20,18 +19,20 @@
     filter: grayscale(73%);
 
     h2 {
-    font-family: Bangers, cursive;
-    font-size: 6em;
-    margin-bottom: 0;
-    color: $color-white;
-    text-shadow: $color-black 6px 5px, $color-black -1px 1px, $color-black -1px -1px, $color-black 1px -1px;
+      font-family: Bangers, cursive;
+      font-size: 6em;
+      margin-bottom: 0;
+      color: $color-white;
+      text-shadow: $color-black 6px 5px, $color-black -1px 1px,
+        $color-black -1px -1px, $color-black 1px -1px;
     }
 
     h4 {
-      font-family: 'PT Sans Narrow', sans-serif;
+      font-family: "PT Sans Narrow", sans-serif;
       font-size: 3em;
       color: $color-white;
-      text-shadow: $color-black 4px 3px, $color-black -1px 1px, $color-black -1px -1px, $color-black 1px -1px;
+      text-shadow: $color-black 4px 3px, $color-black -1px 1px,
+        $color-black -1px -1px, $color-black 1px -1px;
     }
   }
 
@@ -59,11 +60,11 @@
         padding: 14px;
         background-color: #222222;
         color: $color-white;
+        box-sizing: border-box;
       }
       .idCard:hover {
         filter: brightness(115%);
         border: 4px solid $color-yellow;
-        
       }
 
       h4 {
@@ -91,21 +92,39 @@
           text-align: start;
           width: 100%;
           text-align: justify;
-          font-family: 'PT Sans Narrow', sans-serif;
+          font-family: "PT Sans Narrow", sans-serif;
           font-size: 1.2em;
           letter-spacing: 1px;
           text-transform: capitalize;
 
-
           .cardDetailSubTitle {
             color: $color-yellow;
+          }
+          .bar {
+            background-color: $color-yellow;
+            width: 100%;
+            height: 20px;
+            margin-bottom: 5px;
+            border: 1px solid $color-yellow;
+            .bar-inner {
+              background-color: $color-white;
+              height: 18px;
+              // line-height: 18px;
+              position: relative;
+              padding-right: 5px;
+              text-align: right;
+              font-size: 0.8em;
+              font-weight: 700;
+              color: #222222;
+            }
           }
 
           .cardApiInfo {
             margin-bottom: 0;
             padding-left: 15px;
           }
-          .cardBtnLess, .cardBtnMore {
+          .cardBtnLess,
+          .cardBtnMore {
             font-size: 23px;
             color: $color-blue;
             cursor: grab;
@@ -113,8 +132,6 @@
             margin-top: 4px;
             margin-bottom: 4px;
           }
-
-
         }
 
         li:hover {
