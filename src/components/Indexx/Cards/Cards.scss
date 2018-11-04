@@ -1,0 +1,124 @@
+// QUAND J'AI VOULU TRANSFERER TOUS LES FICHIERS DU GITHUB TEST,
+// L'ANIMATION NE FONCTIONNAIT PAS CORRECTEMENT
+// AU LIEU DE FAIRE UN FLIP NORMAL CA COUPAIT LA CARTE EN DEUX
+// ET ÇA TOURNAIT ENSUITE... UN TRUC CHELOU ET PAS BEAU...
+// J'AI PAS VRAIMENT COMPRIS OU ETAIT LE PB
+// ET ÇA A FINI PAR MARCHER QUAND J'AI MIS EN COMMENTAIRE
+// transform-style: preserve-3d;
+// A VOIR OU J'AI MERDE...
+
+.indexx {
+  text-align: center;
+  margin-top: 20px;
+
+  .link {
+    text-decoration: none;
+  }
+  button,
+  .link {
+    text-transform: uppercase;
+    padding: 20px 15px;
+    margin: 30px;
+    background-color: #222;
+    color: #f3f3f3;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+    outline: none;
+
+    &:hover {
+      background-color: #1f75b9;
+    }
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+
+    .card {
+      /* grid-column:1;
+				grid-row: 1; */
+      justify-self: center;
+      align-self: center;
+      width: 300px;
+      height: 400px;
+
+      // transform-style: preserve-3d;
+
+      // après avoir mis en commentaire la ligne ci-dessus j'ai du rajouter
+      // les deux lignes ci-dessous pour que le derrière de l'image ne soit
+      // pas blanc... à revoir j'imagine.
+
+      background-color: #ffffff00;
+      border: none;
+
+      perspective: 600px;
+      transition: 0.5s;
+
+      .front {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transition: 0.5s;
+
+        img {
+          width: 300px;
+          height: 400px;
+        }
+      }
+
+      &:hover .front {
+        transform: rotateX(-180deg);
+      }
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateX(180deg);
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transition: 0.5s;
+
+        .details {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+          box-sizing: border-box;
+          transform: translateY(-50%);
+        }
+
+        h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 24px;
+          color: #fff;
+
+          span {
+            color: #a7a7a7;
+            font-size: 24px;
+          }
+        }
+      }
+
+      &:hover .back {
+        transform: rotateX(0deg);
+      }
+
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+}
