@@ -9,7 +9,7 @@ import CardSuperId from "./CardSuperId";
 import CardPhysical from "./CardPhysical";
 import CardStats from "./CardStats";
 import CardAffiliation from "./Affiliation";
-import NavBar from "../NavBar/NavBar";
+import NavBarHero from "../NavBarHero/NavBarHero";
 import Footer from "../Footer/Footer";
 import { NavLink } from "react-router-dom";
 import Router from "../Router";
@@ -87,7 +87,7 @@ export default class Hero extends Component {
     if (this.state.hero.name) {
       return (
         <React.Fragment>
-          <NavBar />
+          <NavBarHero />
           <div className="card-container">
             <header
               className="header-hero"

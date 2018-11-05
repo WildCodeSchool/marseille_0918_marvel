@@ -115,7 +115,7 @@ class Search extends Component {
               if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
                                           
                 return (
-                  <Link className="SearchLink" to={`/character/${character.id}`} onClick={`/character/${character.id}`}>
+                  <Link className="SearchLink" to={`/character/${character.id}`}>
                     <li
                     className={className}
                     key={character.id}
@@ -129,7 +129,7 @@ class Search extends Component {
                 )
               } else {
                 return (
-                  <Link to={`/character/${character.id}`} onClick={`/character/${character.id}`} >
+                  <Link to={`/character/${character.id}`} >
                     <li
                     className={className}
                     key={character.id}
