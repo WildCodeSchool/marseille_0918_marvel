@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import "./Hero.scss";
+import filteredData from "../Indexx/superFiltered.json";
 
 import CardIdentity from "./CardIdentity";
 import CardSuperId from "./CardSuperId";
@@ -10,19 +11,48 @@ import CardStats from "./CardStats";
 import CardAffiliation from "./Affiliation";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import { NavLink } from "react-router-dom";
 import Router from "../Router";
 import { Link } from "react-router-dom";
 import Modal from "../Modal/Modal";
 
 import ImgHeader from "./headerimg.jpg";
 
+// These variables will allow us to use a random button to change to another hero
+const randomId = Math.floor(Math.random() * filteredData.length);
+const randomHero = filteredData[randomId].id;
+
 export default class Hero extends Component {
   constructor(props) {
     super(props);
 
+    //WITH THE NEXT FEW LINES WE FIND THE CURRENT HERO DISPLAYED ID IN THE FILTEREDDATA.JSON FILE
+    //WHICH WILL ALLOW US TO FIND WHICH ONE IS THE NEXT ONE OR THE PREVIOUS ONE
+    let currentfilteredDataID;
+    filteredData.filter((element, idx) => {
+      if (element.id === this.props.match.params.id) {
+        return (currentfilteredDataID = idx);
+      }
+    });
+
+    let previousId;
+    if (currentfilteredDataID === 0) {
+      previousId = filteredData[filteredData.length - 1].id;
+    } else {
+      previousId = filteredData[currentfilteredDataID - 1].id;
+    }
+    let nextId;
+    if (currentfilteredDataID === filteredData.length - 1) {
+      nextId = 1;
+    } else {
+      nextId = filteredData[currentfilteredDataID + 1].id;
+    }
+
     this.state = {
       hero: [],
-      currentID: ""
+      currentID: "",
+      nextId: nextId,
+      previousId: previousId
     };
   }
 
@@ -53,6 +83,7 @@ export default class Hero extends Component {
   }
 
   render() {
+    console.log(this.state.nextId);
     if (this.state.hero.name) {
       return (
         <React.Fragment>
@@ -65,7 +96,6 @@ export default class Hero extends Component {
               <h2>{this.state.hero.name}</h2>
               <h4>{this.state.hero.biography.publisher}</h4>
             </header>
-
             <section className="card-grid-container">
               <div className="leftSide">
                 <div className="idCard cardImg">
@@ -118,6 +148,29 @@ export default class Hero extends Component {
                 />
               </div>
             </section>
+            <div className="btnLine">
+              <NavLink
+                className="link"
+                to={`/character/${this.state.previousId}`}
+                onClick={`/character/${this.state.previousId}`}
+              >
+                Previous
+              </NavLink>
+              <NavLink
+                className="link"
+                to={`/character/${randomHero}`}
+                onClick={`/character/${randomHero}`}
+              >
+                Random
+              </NavLink>
+              <NavLink
+                className="link"
+                to={`/character/${this.state.nextId}`}
+                onClick={`/character/${this.state.nextId}`}
+              >
+                Next
+              </NavLink>
+            </div>
           </div>
           <Footer />
         </React.Fragment>

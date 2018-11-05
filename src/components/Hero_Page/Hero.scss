@@ -35,6 +35,26 @@
         $color-black -1px -1px, $color-black 1px -1px;
     }
   }
+  .btnLine {
+    display: flex;
+    .link {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 20px 15px;
+      margin: 30px;
+      background-color: #222;
+      color: #f3f3f3;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: 700;
+      outline: none;
+
+      &:hover {
+        background-color: #1f75b9;
+      }
+    }
+  }
 
   // Grid Container for everything below the publisher name
   .card-grid-container {
