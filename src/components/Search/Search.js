@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
 import filteredData from "../Indexx/superFiltered.json";
-import axios from "axios";
-import './Search.scss';
+// import axios from "axios";
+import "./Search.scss";
 
 class Search extends Component {
   state = {
@@ -13,36 +13,41 @@ class Search extends Component {
     // CHARACTERS AFTER FILTER PUBLISHER AND ID
     suggestions: [],
     // REDIRECT TO HERO PAGE
-    toHeroPage: false,
-    }
+    toHeroPage: false
+  };
 
   // REMISE A ZERO SUGGESTIONS, MINUMUM CARACTERES ET FILTRE RECHERCHE
   onChange = e => {
-    this.setState({suggestions : []})
+    this.setState({ suggestions: [] });
     if (this.refs.searchBar.value.length >= 1) {
-      return (
-        this.setState({suggestions : filteredData.filter((character) => 
-        character.name.toLowerCase().startsWith(this.refs.searchBar.value.toLowerCase()) || character.biography["full-name"].toLowerCase().startsWith(this.refs.searchBar.value.toLowerCase())
-        ), showSuggestions: true})
-      )
+      return this.setState({
+        suggestions: filteredData.filter(
+          character =>
+            character.name
+              .toLowerCase()
+              .startsWith(this.refs.searchBar.value.toLowerCase()) ||
+            character.biography["full-name"]
+              .toLowerCase()
+              .startsWith(this.refs.searchBar.value.toLowerCase())
+        ),
+        showSuggestions: true
+      });
     } else {
-      return (
-        this.setState({suggestions: []})
-      )
+      return this.setState({ suggestions: [] });
     }
-  }
+  };
 
-    // EVENT FIRED WHEN THE USER CLICKS ON A SUGGESTION
+  // EVENT FIRED WHEN THE USER CLICKS ON A SUGGESTION
   onClick = e => {
     // UPDATE THE USER INPUT AND RESET THE REST OF THE STATE
     this.setState({
-    activeSuggestion: 0,
-    showSuggestions: false,
-    toHeroPage: true
+      activeSuggestion: 0,
+      showSuggestions: false,
+      toHeroPage: true
     });
   };
 
-    // EVENT FIRED WHEN THE USER PRESSES A KEY DOWN
+  // EVENT FIRED WHEN THE USER PRESSES A KEY DOWN
   onKeyDown = e => {
     // BIND STATES
     const { activeSuggestion, suggestions } = this.state;
@@ -65,15 +70,14 @@ class Search extends Component {
     }
     // USER PRESSED THE DOWN ARROW, INCREMENT THE INDEX
     else if (e.keyCode === 40) {
-      if (activeSuggestion - 1 === this.state.suggestions.length -2) {
+      if (activeSuggestion - 1 === this.state.suggestions.length - 2) {
         return;
       }
       this.setState({ activeSuggestion: activeSuggestion + 1 });
     }
-  }
+  };
 
   render() {
-
     // BIND STATES PROPS AND FUNCTIONS
     const {
       startRequest,
@@ -81,72 +85,73 @@ class Search extends Component {
       onChange,
       onClick,
       onKeyDown,
-      state: {
-        activeSuggestion,
-        showSuggestions,
-        suggestions,
-        toHeroPage
-      }
+      state: { activeSuggestion, showSuggestions, suggestions, toHeroPage }
     } = this;
 
-
     if (toHeroPage === true) {
-      return <Redirect to={`/character/${suggestions[activeSuggestion].id}`} 
-      />
-      this.setState({toHeroPage: false})
+      return <Redirect to={`/character/${suggestions[activeSuggestion].id}`} />;
+      this.setState({ toHeroPage: false });
     }
 
     let suggestionsListComponent;
 
     if (showSuggestions && this.refs.searchBar.value) {
       if (suggestions.length) {
-      suggestionsListComponent = (
-        <ul className="suggestions">
-          {
-          suggestions.map((character, index) => {
-            if (index < 7) {
+        suggestionsListComponent = (
+          <ul className="suggestions">
+            {suggestions.map((character, index) => {
+              if (index < 7) {
+                let className;
 
-            let className;
+                // FLAG THE ACTIVE SUGGESTION WITH A CLASS
+                if (index === activeSuggestion) {
+                  className = "suggestion-active";
+                }
 
-              // FLAG THE ACTIVE SUGGESTION WITH A CLASS
-              if (index === activeSuggestion) {
-                  className = "suggestion-active";}
-
-              if (character.biography["full-name"] !== "" && character.biography["full-name"] !== "-" && character.biography["full-name"] !== character.name) {
-                                          
-                return (
-                  <Link className="SearchLink" to={`/character/${character.id}`}>
-                    <li
-                    className={className}
-                    key={character.id}
-                    onClick={onClick}
-                    onKeyDown={onKeyDown}
+                if (
+                  character.biography["full-name"] !== "" &&
+                  character.biography["full-name"] !== "-" &&
+                  character.biography["full-name"] !== character.name
+                ) {
+                  return (
+                    <Link
+                      className="SearchLink"
+                      to={`/character/${character.id}`}
                     >
-                      {character.name}<span className="FullName"> ({character.biography["full-name"]})</span>
-                    </li>
-                  </Link>                          
-
-                )
-              } else {
-                return (
-                  <Link to={`/character/${character.id}`} >
-                    <li
-                    className={className}
-                    key={character.id}
-                    onClick={onClick}
-                    onKeyDown={onKeyDown}
-                    >
-                      {character.name}
-                    </li>
-                  </Link>
-                )
+                      <li
+                        className={className}
+                        key={character.id}
+                        onClick={onClick}
+                        onKeyDown={onKeyDown}
+                      >
+                        {character.name}
+                        <span className="FullName">
+                          {" "}
+                          ({character.biography["full-name"]})
+                        </span>
+                      </li>
+                    </Link>
+                  );
+                } else {
+                  return (
+                    <Link to={`/character/${character.id}`}>
+                      <li
+                        className={className}
+                        key={character.id}
+                        onClick={onClick}
+                        onKeyDown={onKeyDown}
+                      >
+                        {character.name}
+                      </li>
+                    </Link>
+                  );
+                }
               }
-            }
-          })}
-        </ul>
-      );
+            })}
+          </ul>
+        );
       } else {
-          suggestionsListComponent = (
+        suggestionsListComponent = (
           <div className="no-suggestions">
             <em>No suggestions !</em>
           </div>
@@ -157,15 +162,15 @@ class Search extends Component {
     return (
       <Fragment>
         <input
-        type="text"
-        className="form-control form-control-lg"
-        ref="searchBar"
-        placeholder="Search your hero !"
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-        autoFocus
+          type="text"
+          className="form-control form-control-lg"
+          ref="searchBar"
+          placeholder="Search your hero !"
+          onChange={onChange}
+          onKeyDown={onKeyDown}
+          autoFocus
         />
-          {suggestionsListComponent}
+        {suggestionsListComponent}
       </Fragment>
     );
   }

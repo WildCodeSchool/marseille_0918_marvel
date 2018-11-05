@@ -69,13 +69,10 @@
       font-size: 9vw;
       color: $color-black;
       grid-row: 3;
-
       &:hover {
         color: $color-yellow;
       }
     }
-
-
 
     .arrows.arrowLeft {
       grid-column: 1 / 2;
@@ -99,7 +96,7 @@
       align-self: center;
       grid-column: 1 / 3;
       grid-row: 2;
-      
+
       .idCard {
         border: 2px solid $color-yellow;
         border-radius: 3px;
@@ -114,7 +111,6 @@
           border: 4px solid $color-yellow;
         }
       }
-
 
       h4 {
         color: $color-white;
@@ -221,14 +217,11 @@
         grid-row: 1;
       }
 
-
-
       .arrows.arrowLeft {
         grid-column: 1 / 2;
         justify-self: start;
-
       }
-      .leftSide{
+      .leftSide {
         grid-column: 2 / 3;
         grid-row: 1;
       }
@@ -241,7 +234,6 @@
       .arrows.arrowRight {
         grid-column: 4 / 5;
         justify-self: end;
-
       }
     }
   }
