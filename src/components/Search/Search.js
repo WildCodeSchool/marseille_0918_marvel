@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
 import axios from "axios";
 import './Search.scss';
 
@@ -17,8 +16,10 @@ class Search extends Component {
     showSuggestions: false,
     // CHARACTERS FROM API
     characters: [],
-    //CHARACTERS AFTER FILTER PUBLISHER AND ID
-    suggestions: []
+    // CHARACTERS AFTER FILTER PUBLISHER AND ID
+    suggestions: [],
+    // REDIRECT TO HERO PAGE
+    toHeroPage: false,
     };
   }
 
@@ -88,6 +89,7 @@ class Search extends Component {
     activeSuggestion: 0,
     filteredSuggestions: [],
     showSuggestions: false,
+    toHeroPage: true
     });
   };
 
@@ -101,9 +103,9 @@ class Search extends Component {
     if (e.keyCode === 13) {
       this.setState({
         showSuggestions: false,
+        toHeroPage: true
       });
       this.refs.searchBar.value = suggestions[activeSuggestion].name;
-      console.log(suggestions[activeSuggestion].id)
     }
     // USER PRESSED THE UP ARROW, DECREMENT THE INDEX
     else if (e.keyCode === 38) {
@@ -122,6 +124,7 @@ class Search extends Component {
   };
 
   render() {
+
     // BIND STATES PROPS AND FUNCTIONS
     const {
       startRequest,
@@ -134,9 +137,18 @@ class Search extends Component {
         filteredSuggestions,
         showSuggestions,
         suggestions,
-        characters
+        characters,
+        toHeroPage
       }
     } = this;
+
+
+    if (toHeroPage === true) {
+      console.log(suggestions[activeSuggestion].id)
+      return <Redirect to={`/character/${suggestions[activeSuggestion].id}`} 
+      />
+      this.setState({toHeroPage: false})
+    }
 
     let suggestionsListComponent;
 
