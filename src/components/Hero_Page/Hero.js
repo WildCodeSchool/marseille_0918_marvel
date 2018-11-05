@@ -97,6 +97,13 @@ export default class Hero extends Component {
               <h4>{this.state.hero.biography.publisher}</h4>
             </header>
             <section className="card-grid-container">
+            <NavLink
+                className="arrows arrowLeft"
+                to={`/character/${this.state.previousId}`}
+                onClick={`/character/${this.state.previousId}`}
+              >
+                <i class="fas fa-arrow-alt-circle-left"></i>
+              </NavLink>
               <div className="leftSide">
                 <div className="idCard cardImg">
                   <img
@@ -147,30 +154,24 @@ export default class Hero extends Component {
                   id={this.state.hero.id}
                 />
               </div>
-            </section>
-            <div className="btnLine">
+
               <NavLink
-                className="link"
-                to={`/character/${this.state.previousId}`}
-                onClick={`/character/${this.state.previousId}`}
-              >
-                Previous
-              </NavLink>
-              <NavLink
-                className="link"
-                to={`/character/${randomHero}`}
-                onClick={`/character/${randomHero}`}
-              >
-                Random
-              </NavLink>
-              <NavLink
-                className="link"
+                className="arrows arrowRight"
                 to={`/character/${this.state.nextId}`}
                 onClick={`/character/${this.state.nextId}`}
               >
-                Next
+                <i className="fas fa-arrow-alt-circle-right"></i>
               </NavLink>
-            </div>
+            </section>
+              
+              <NavLink
+                className="random"
+                to={`/character/${randomHero}`}
+                onClick={`/character/${randomHero}`}
+              >
+                <i class="fas fa-random"></i>
+              </NavLink>
+
           </div>
           <Footer />
         </React.Fragment>

@@ -58,21 +58,48 @@
 
   // Grid Container for everything below the publisher name
   .card-grid-container {
-    width: 65vw;
+    width: 70vw;
     margin-top: 45px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 20px;
     justify-content: center;
 
+    .arrows {
+      font-size: 9vw;
+      color: $color-black;
+      grid-row: 3;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+
+
+
+    .arrows.arrowLeft {
+      grid-column: 1 / 2;
+      align-self: center;
+      justify-self: center;
+    }
+
     // Left column of the grid
-    img {
-      width: 100%;
-      border-radius: 3px;
+    .leftSide {
+      grid-column: 1 / 3;
+      grid-row: 1;
+
+      img {
+        width: 100%;
+        border-radius: 3px;
+      }
     }
 
     // Right column of the grid
     .rightSide {
       align-self: center;
+      grid-column: 1 / 3;
+      grid-row: 2;
+      
       .idCard {
         border: 2px solid $color-yellow;
         border-radius: 3px;
@@ -81,11 +108,13 @@
         background-color: #222222;
         color: $color-white;
         box-sizing: border-box;
+
+        &:hover {
+          filter: brightness(115%);
+          border: 4px solid $color-yellow;
+        }
       }
-      .idCard:hover {
-        filter: brightness(115%);
-        border: 4px solid $color-yellow;
-      }
+
 
       h4 {
         color: $color-white;
@@ -159,6 +188,23 @@
         }
       }
     }
+
+    .arrows.arrowRight {
+      grid-column: 2 / 3;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  .random {
+    text-decoration: none;
+    font-size: 3em;
+    color: $color-blue;
+    margin-top: 25px;
+
+    &:hover {
+      color: $color-yellow;
+    }
   }
 }
 
@@ -167,7 +213,36 @@
 @media only screen and (min-width: 670px) {
   .card-container {
     .card-grid-container {
-      grid-template-columns: minmax(150px, 1fr) 1fr;
+      grid-template-columns: 15% minmax(265px, 1fr) 1fr 15%;
+      grid-template-rows: 1fr;
+
+      .arrows {
+        font-size: 3em;
+        grid-row: 1;
+      }
+
+
+
+      .arrows.arrowLeft {
+        grid-column: 1 / 2;
+        justify-self: start;
+
+      }
+      .leftSide{
+        grid-column: 2 / 3;
+        grid-row: 1;
+      }
+
+      .rightSide {
+        grid-column: 3 / 4;
+        grid-row: 1;
+      }
+
+      .arrows.arrowRight {
+        grid-column: 4 / 5;
+        justify-self: end;
+
+      }
     }
   }
 }
