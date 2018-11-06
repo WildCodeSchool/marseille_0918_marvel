@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../../Variables.scss';
-import './TopBiggest.scss';
 import {NavLink} from 'react-router-dom';
 
 // Import Pictures
