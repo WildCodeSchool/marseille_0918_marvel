@@ -4,7 +4,9 @@ import "./menu.scss";
 import Home from "../Home";
 import { NavLink } from "react-router-dom";
 import Router from "../Router";
-import Tops from "./../Top/Top";
+import Tops from '../Top/TopSuper/Top';
+import TopBad from '../Top/TopBad/TopBad';
+
 
 // Import Images
 import Img1 from "./pictures/hulk.jpg";
@@ -51,7 +53,7 @@ class Menu extends Component {
                   Top 10 <br />
                   SuperHeroes
                 </h3>
-                <NavLink className="link" to="/tops" onClick="/tops" />
+                <NavLink className="link" to="/tops"/>
               </div>
             </div>
           </div>
