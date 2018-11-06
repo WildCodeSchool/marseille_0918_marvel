@@ -37,6 +37,7 @@ class Menu extends Component {
                   <br />
                   DC Comics
                 </h3>
+                <NavLink className="link" to="/XmenvsAvengers" />
               </div>
             </div>
           </div>
@@ -143,6 +144,7 @@ class Menu extends Component {
                   <br />
                   Avengers
                 </h3>
+                  <NavLink className="link" to="/DCvsMarvel" />
               </div>
             </div>
           </div>

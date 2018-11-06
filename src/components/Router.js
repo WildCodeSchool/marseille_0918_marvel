@@ -6,6 +6,8 @@ import Page404 from "./Page404/page404";
 import Tops from './Top/TopSuper/Top';
 import TopBad from './Top/TopBad/TopBad';
 import Indexx from "./Indexx/Indexx";
+import DCvsMarvel from "./Versus/DCvsMarvel/DCvsMarvel";
+import XmenvsAvengers from "./Versus/XmenvsAvengers/XmenvsAvengers"
 
 class RouterApp extends Component {
   render() {
@@ -16,6 +18,8 @@ class RouterApp extends Component {
           <Route path="/character/:id" component={Hero} />
           <Route path="/tops" component={Tops} />
           <Route path="/topvilains" component={TopBad} />
+          <Route path="/XmenvsAvengers" component={XmenvsAvengers} />
+          <Route path="/DCvsMarvel" component={DCvsMarvel}/>
           <Route path="/index" component={Indexx} />
           <Route component={Page404} />
         </Switch>
