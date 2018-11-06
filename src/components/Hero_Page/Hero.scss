@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 12vw;
+  padding-top: 0;
   margin-bottom: 5vw;
 
   .header-hero {
@@ -20,7 +20,7 @@
 
     h2 {
       font-family: Bangers, cursive;
-      font-size: 6em;
+      font-size: 4em;
       margin-bottom: 0;
       color: $color-white;
       text-shadow: $color-black 6px 5px, $color-black -1px 1px,
@@ -62,13 +62,14 @@
     margin-top: 45px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 20px;
+    grid-template-rows: 35% 60% 5%;
     justify-content: center;
 
     .arrows {
       font-size: 9vw;
       color: $color-black;
       grid-row: 3;
+      margin-top: 25px;
       &:hover {
         color: $color-yellow;
       }
@@ -108,7 +109,7 @@
 
         &:hover {
           filter: brightness(115%);
-          border: 4px solid $color-yellow;
+          border: 2px solid $color-blue;
         }
       }
 
@@ -119,6 +120,7 @@
         font-weight: 900;
         font-family: Bangers, cursive;
         letter-spacing: 3px;
+        font-size: 1.6em;
       }
 
       h4:hover {
@@ -206,12 +208,31 @@
 
 // *********** M E D I A   Q U E R I E S ***********
 
-@media only screen and (min-width: 670px) {
+@media only screen and (max-width: 1254px) and (min-width: 577px) {
   .card-container {
+    .card-grid-container {
+      .rightSide {
+        h4 {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .card-container {
+    padding-top: 12vw;
+    
+    .header-hero {
+      h2 {
+        font-size: 6em;
+      }
+    }
     .card-grid-container {
       grid-template-columns: 15% minmax(265px, 1fr) 1fr 15%;
       grid-template-rows: 1fr;
-
+      
       .arrows {
         font-size: 3em;
         grid-row: 1;
@@ -229,6 +250,7 @@
       .rightSide {
         grid-column: 3 / 4;
         grid-row: 1;
+
       }
 
       .arrows.arrowRight {
