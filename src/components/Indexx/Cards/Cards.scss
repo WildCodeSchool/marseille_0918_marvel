@@ -7,9 +7,15 @@
 // transform-style: preserve-3d;
 // A VOIR OU J'AI MERDE...
 
+
+
 .indexx {
   text-align: center;
-  margin-top: 20px;
+  .Navbar {
+    background-color: #222;
+    position: relative;
+    margin-bottom: 20px;
+  }
 
   .link {
     text-decoration: none;
@@ -22,23 +28,27 @@
     background-color: #222;
     color: #f3f3f3;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: 700;
     outline: none;
+    border: 2px solid #222;
 
     &:hover {
-      background-color: #1f75b9;
+      background-color: #f28f18;
+      
+      box-sizing: content-box
     }
   }
 
   .cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    // grid-column-gap: 20px;
+    grid-row-gap: 35px;
     justify-items: center;
     align-items: center;
+    
 
     .card {
       /* grid-column:1;
@@ -47,6 +57,7 @@
       align-self: center;
       width: 300px;
       height: 400px;
+      
 
       // transform-style: preserve-3d;
 
@@ -54,7 +65,7 @@
       // les deux lignes ci-dessous pour que le derrière de l'image ne soit
       // pas blanc... à revoir j'imagine.
 
-      background-color: #ffffff00;
+      background-color: transparent;
       border: none;
 
       perspective: 600px;
@@ -102,12 +113,16 @@
         h2 {
           margin: 0;
           padding: 0;
-          font-size: 24px;
+          font-size: 28px;
           color: #fff;
+          font-weight: 700;
+          font-family: Bangers, cursive;
+          
 
           span {
             color: #a7a7a7;
             font-size: 24px;
+            font-family: "PT Sans Narrow", sans-serif;
           }
         }
       }
@@ -118,6 +133,66 @@
 
       a {
         cursor: pointer;
+      }
+    }
+  }
+}
+
+
+/** **************** INDEXX MEDIA QUERIES ***************** **/
+
+@media (max-width: 1290px) and (min-width: 888px) {
+  .indexx {
+    .cards-container {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .card {
+        width: 275px;
+        height: 375px;
+        .front {
+          img {
+            width: 275px;
+            height: 375px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 887px) and (min-width: 577px) {
+  .indexx {
+    .cards-container {
+      grid-template-columns: 1fr 1fr ;
+
+      .card {
+        width: 275px;
+        height: 375px;
+        .front {
+          img {
+            width: 275px;
+            height: 375px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media  (max-width: 576px) {
+  .indexx {
+    .cards-container {
+      grid-template-columns: 1fr ;
+
+      .card {
+        width: 75vw;
+        height: auto;
+        .front {
+          img {
+            width: 75vw;
+            height: auto;
+          }
+        }
       }
     }
   }
