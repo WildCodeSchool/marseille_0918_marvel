@@ -4,16 +4,17 @@ import '../../Variables.scss';
 import {NavLink} from 'react-router-dom';
 
 // Import Pictures
- import mystique from './Pictures/mystique.jpg';
- import quinn from './Pictures/quinn.jpg';
+import mystique from './Pictures/mystique.jpg';
+import quinn from './Pictures/quinn.jpg';
 import jean from './Pictures/jean.jpg';
 import batgirl from './Pictures/batgirl.jpg';
 import cpt from './Pictures/captainMarvel2.jpg';
 import catWoman from './Pictures/catWoman.jpg';
 import supergirl from './Pictures/superGirl.jpg';
 import wonderWoman from './Pictures/wonderWoman.jpg';
-import scarlett from './Pictures/scarlett.jpeg';
-import tornade from './Pictures/tornade.jpg'
+import tornade from './Pictures/tornade.jpg';
+import laura from './Pictures/x-23.jpg';
+
 
 
 class TopWomen extends Component{
@@ -171,10 +172,10 @@ class TopWomen extends Component{
                 <h2>Wonder Woman</h2>
             </div>
             </li>
-            <li className="li-2" onClick={this.GetSiblings} style={{backgroundImage: `url(${scarlett})`}}>
+            <li className="li-2" onClick={this.GetSiblings} style={{backgroundImage: `url(${laura})`}}>
             <h3>2<span>nd</span></h3>
             <div className="content">
-                <h2>Scarlett Spider</h2>
+                <h2>X-23</h2>
             </div>
             </li>
             <li className="li-1" onClick={this.GetSiblings} style={{backgroundImage: `url(${batgirl})`}}>

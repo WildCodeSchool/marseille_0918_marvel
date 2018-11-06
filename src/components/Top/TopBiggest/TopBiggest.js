@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import './TopBiggest.scss';
 import '../../Variables.scss';
+import './TopBiggest.scss';
 import {NavLink} from 'react-router-dom';
 
 // Import Pictures
 import redHulk from './Pictures/redHulk.jpg';
-import galactus from './Pictures/galactus.jpg';
-import finfangfour from './Pictures/finfangfour.jpg';
+import galactus from './Pictures/galactus2.jpg';
+import finfangfour from './Pictures/fin.jpg';
 import groot from './Pictures/groot.jpg';
 import juggernaut from './Pictures/juggernaut.jpg';
 import giganta from './Pictures/giganta.jpg';
 import thanos from './Pictures/thanos.jpg';
-import abomination from './Pictures/abomination.jpg';
+import abomination from './Pictures/abo.jpg';
 import doomsday from './Pictures/doomsday.jpg';
 import antiVenom from './Pictures/antiVenom.jpg';
 
@@ -103,7 +103,6 @@ class TopBiggest extends Component{
     }
     }
 }
-
     render(){
     return(
         <div className="bod">

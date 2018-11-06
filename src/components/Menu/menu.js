@@ -14,7 +14,7 @@ import TopWomen from '../Top/TopWomen/TopWomen';
 // Import Images
 import Img1 from "./pictures/hulk.jpg";
 import Img2 from "./pictures/flash3.jpg";
-import Img3 from "./pictures/antman.jpg";
+import Img3 from "./pictures/cpt.jpg";
 import Img4 from "./pictures/vs2.png";
 import Img5 from "./pictures/venom.jpg";
 import logo from "./pictures/logo.png";
