@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Cards from "./Cards/Cards";
 import filteredData from "./superFiltered.json";
 import { NavLink } from "react-router-dom";
+import NavBarHero from "../NavBarHero/NavBarHero";
 
 class Indexx extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class Indexx extends Component {
   render() {
     return (
       <div className="indexx">
+      <NavBarHero />
         <Cards characters={this.state.tab} />
         <button
           onClick={() => {
