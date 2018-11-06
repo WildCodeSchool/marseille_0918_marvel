@@ -86,6 +86,7 @@ class Menu extends Component {
                   <br />
                   Vilains
                 </h3>
+                <NavLink className="link" to="/topvilains"/>
               </div>
             </div>
           </div>

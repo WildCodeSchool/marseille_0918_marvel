@@ -3,7 +3,7 @@ import './Top.scss';
 import '../../Variables.scss';
 import {NavLink} from 'react-router-dom';
 
-// Import Pictures 
+// Import Pictures
 import jean from './Pictures/jean.jpg';
 import cpt from './Pictures/captainM.jpg';
 import daredevil from './Pictures/daredevil.jpg';
@@ -54,7 +54,7 @@ class Tops extends Component{
           })
         }
 } else {
-// responsive 
+// responsive
   const getSiblings = (elem) => {
     let siblings = [];
     let sibling = elem.parentNode.firstChild;
@@ -126,25 +126,25 @@ class Tops extends Component{
               <h2>Jean Grey</h2>
             </div>
           </li>
-          <li className="li-9" onClick={this.GetSiblings} style={{backgroundImage: `url(${deathpool})`}}>
+          <li className="li-9" onClick={this.GetSiblings}style={{backgroundImage: `url(${deathpool})`}}>
             <h3>9<span>th</span></h3>
             <div className="content">
               <h2>Deadpool</h2>
             </div>
           </li>
-          <li className="li-8" onClick={this.GetSiblings} style={{backgroundImage: `url(${hulk})`}}>
+          <li className="li-8" onClick={this.GetSiblings}style={{backgroundImage: `url(${hulk})`}}>
             <h3>8<span>th</span></h3>
             <div className="content">
               <h2>Hulk</h2>
             </div>
           </li>
-          <li className="li-7" onClick={this.GetSiblings} style={{backgroundImage: `url(${wolverine})`}}>
+          <li className="li-7" onClick={this.GetSiblings}style={{backgroundImage: `url(${wolverine})`}}>
             <h3>7<span>th</span></h3>
             <div className="content">
               <h2>Wolverine</h2>
             </div>
           </li>
-          <li className="li-6" onClick={this.GetSiblings}  style={{backgroundImage: `url(${cpt})`}}>
+          <li className="li-6" onClick={this.GetSiblings} style={{backgroundImage: `url(${cpt})`}}>
             <h3>6<span>th</span></h3>
             <div className="content">
               <h2>Cpt Marvel</h2>
@@ -184,7 +184,7 @@ class Tops extends Component{
             </div>
           </li>
         </ul>
-        <NavLink className="link" to='/' onClick='/'> <i className="fas fa-undo"/> </NavLink>
+        <NavLink className="link" to='/'> <i className="fas fa-undo"/> </NavLink>
         </div>
     )
   }

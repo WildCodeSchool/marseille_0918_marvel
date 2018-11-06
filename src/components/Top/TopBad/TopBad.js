@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './Top.scss';
+import './TopBad.scss';
 import '../../Variables.scss';
 import {NavLink} from 'react-router-dom';
 
-// Import Pictures 
+// Import Pictures
 import mystique from './topBad/mystique.jpg';
 import venom from './topBad/venom.jpg';
 import magneto from './topBad/magneto.jpg';
@@ -15,7 +15,7 @@ import carnage from './topBad/carnage.jpg';
 import lex from './topBad/lex.jpg';
 import thanos from './topBad/thanos.jpg';
 
-class Tops extends Component{
+class TopBad extends Component{
 
   GetSiblings(){
     if(window.matchMedia("(min-width: 576px)").matches){
@@ -53,7 +53,7 @@ class Tops extends Component{
           })
         }
 } else {
-// responsive 
+// responsive
   const getSiblings = (elem) => {
     let siblings = [];
     let sibling = elem.parentNode.firstChild;
@@ -119,73 +119,73 @@ class Tops extends Component{
               <div className="num" onClick={this.GetSiblings}>1<span>st</span></div>
         </div>
         <ul >
-          <li className="li-10" onClick={this.GetSiblings} style={{backgroundImage: `url(${jean})`}}>
+          <li className="li-10" onClick={this.GetSiblings} style={{backgroundImage: `url(${mystique})`}}>
             <h3>10<span>th</span></h3>
             <div className="content">
-              <h2>Jean Grey</h2>
+              <h2>Mystique</h2>
             </div>
           </li>
-          <li className="li-9" onClick={this.GetSiblings} style={{backgroundImage: `url(${deathpool})`}}>
+          <li className="li-9" onClick={this.GetSiblings} style={{backgroundImage: `url(${venom})`}}>
             <h3>9<span>th</span></h3>
             <div className="content">
-              <h2>Deadpool</h2>
+              <h2>Venom</h2>
             </div>
           </li>
-          <li className="li-8" onClick={this.GetSiblings} style={{backgroundImage: `url(${hulk})`}}>
+          <li className="li-8" onClick={this.GetSiblings} style={{backgroundImage: `url(${magneto})`}}>
             <h3>8<span>th</span></h3>
             <div className="content">
-              <h2>Hulk</h2>
+              <h2>Magneto</h2>
             </div>
           </li>
-          <li className="li-7" onClick={this.GetSiblings} style={{backgroundImage: `url(${wolverine})`}}>
+          <li className="li-7" onClick={this.GetSiblings} style={{backgroundImage: `url(${galactus})`}}>
             <h3>7<span>th</span></h3>
             <div className="content">
-              <h2>Wolverine</h2>
+              <h2>Galactus</h2>
             </div>
           </li>
-          <li className="li-6" onClick={this.GetSiblings}  style={{backgroundImage: `url(${cpt})`}}>
+          <li className="li-6" onClick={this.GetSiblings} style={{backgroundImage: `url(${lady})`}}>
             <h3>6<span>th</span></h3>
             <div className="content">
-              <h2>Cpt Marvel</h2>
+              <h2>Lady Deathstrike</h2>
 
             </div>
           </li>
-          <li className="li-5" onClick={this.GetSiblings} style={{backgroundImage: `url(${invisibilityW})`}}>
+          <li className="li-5" onClick={this.GetSiblings} style={{backgroundImage: `url(${carnage})`}}>
             <h3>5<span>th</span></h3>
             <div className="content">
-              <h2>Invisibility Woman</h2>
+              <h2>Carnage</h2>
 
             </div>
           </li>
-          <li className="li-4" onClick={this.GetSiblings} style={{backgroundImage: `url(${daredevil})`}}>
+          <li className="li-4" onClick={this.GetSiblings} style={{backgroundImage: `url(${thanos})`}}>
             <h3>4<span>th</span></h3>
             <div className="content">
-              <h2>Daredevil</h2>
+              <h2>Thanos</h2>
 
             </div>
           </li>
-          <li className="li-3" onClick={this.GetSiblings} style={{backgroundImage: `url(${punisher})`}}>
+          <li className="li-3" onClick={this.GetSiblings} style={{backgroundImage: `url(${lex})`}}>
             <h3>3<span>rd</span></h3>
             <div className="content">
-              <h2>The Punisher</h2>
+              <h2>Lex Luthor</h2>
             </div>
           </li>
-          <li className="li-2" onClick={this.GetSiblings} style={{backgroundImage: `url(${thor})`}}>
+          <li className="li-2" onClick={this.GetSiblings} style={{backgroundImage: `url(${joker})`}}>
             <h3>2<span>nd</span></h3>
             <div className="content">
-              <h2>Thor</h2>
+              <h2>Joker</h2>
             </div>
           </li>
-          <li className="li-1" onClick={this.GetSiblings} style={{backgroundImage: `url(${spider})`}}>
+          <li className="li-1" onClick={this.GetSiblings} style={{backgroundImage: `url(${quinn})`}}>
             <h3>1<span>st</span></h3>
             <div className="content">
-              <h2>Spiderman</h2>
+              <h2>Harley Quinn</h2>
             </div>
           </li>
         </ul>
-        <NavLink className="link" to='/' onClick='/'> <i className="fas fa-undo"/> </NavLink>
+        <NavLink className="link" to='/'> <i className="fas fa-undo"/> </NavLink>
         </div>
     )
   }
 }
-export default Tops;
+export default TopBad;
