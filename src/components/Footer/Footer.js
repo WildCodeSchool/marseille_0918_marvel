@@ -10,17 +10,44 @@ import './Footer.scss';
 
 
 class Footer extends Component {
+    state = {
+        subscribed : false,
+        button : "Subscribe"
+    }
+    subscribe = e => {
+        let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (regex.test(String(this.refs.searchBar.value).toLowerCase())) {
+            this.setState({subscribed : true, button : "Sent !"})
+        } else {
+            alert("Your email is not valid !")
+        }
+    }
+
     render() {
+
+        let Bouton = 'btn btn-primary'
+    if (this.state.subscribed) {
+        Bouton = 'btn btn-success'
+    }
         return (
             <React.Fragment>
                 <div className="Foot">
 
                     <p className="Copyright">
-                        Contact Us 
+                        <p className="newsletter">Newsletter</p>
+                        <input 
+                        type="email"
+                        ref="searchBar"
+                        className="form-control"
+                        placeholder="Email">
+                        </input>
+                        <button 
+                        type="submit"
+                        onClick={this.subscribe}
+                        className={Bouton}
+                        >{this.state.button}</button>
                         <br/>
-                        About Us
-                        <br />
-                        Made by the Wild Force ! ©
+                        <p className="made">Made by the Wild Force ! ©</p>
                     </p>
 
                     <div className="icons">
