@@ -6,6 +6,9 @@ import { NavLink } from "react-router-dom";
 import Router from "../Router";
 import Tops from '../Top/TopSuper/Top';
 import TopBad from '../Top/TopBad/TopBad';
+import TopBiggest from '../Top/TopBiggest/TopBiggest';
+import TopWomen from '../Top/TopWomen/TopWomen';
+
 
 
 // Import Images
@@ -103,8 +106,10 @@ class Menu extends Component {
                 <h3>
                   Top 10
                   <br />
-                  Smallest
+                  Women
                 </h3>
+                <NavLink className="link" to="/topwomen"/>
+
               </div>
             </div>
           </div>
@@ -123,6 +128,7 @@ class Menu extends Component {
                   <br />
                   Biggest
                 </h3>
+                <NavLink className="link" to="/topbiggest"/>
               </div>
             </div>
           </div>
