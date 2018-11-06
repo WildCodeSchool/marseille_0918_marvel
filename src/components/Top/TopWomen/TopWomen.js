@@ -12,7 +12,9 @@ import cpt from './Pictures/captainMarvel2.jpg';
 import catWoman from './Pictures/catWoman.jpg';
 import supergirl from './Pictures/superGirl.jpg';
 import wonderWoman from './Pictures/wonderWoman.jpg';
-import scarlett from './Pictures/scarlett.jpeg'
+import scarlett from './Pictures/scarlett.jpeg';
+import tornade from './Pictures/tornade.jpg'
+
 
 class TopWomen extends Component{
 
@@ -124,10 +126,10 @@ class TopWomen extends Component{
                 <h2>Captain Marvel</h2>
             </div>
             </li>
-            <li className="li-9" onClick={this.GetSiblings}style={{backgroundImage: `url(${batgirl})`}}>
+            <li className="li-9" onClick={this.GetSiblings}style={{backgroundImage: `url(${tornade})`}}>
             <h3>9<span>th</span></h3>
             <div className="content">
-                    <h2>Batgirl</h2>
+                    <h2>Tornade</h2>
             </div>
             </li>
             <li className="li-8" onClick={this.GetSiblings}style={{backgroundImage: `url(${catWoman})`}}>
