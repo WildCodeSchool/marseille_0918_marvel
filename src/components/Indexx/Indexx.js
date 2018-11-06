@@ -26,10 +26,42 @@ class Indexx extends Component {
     });
   }
 
+  loadFromC() {
+    this.setState({
+      tab: filteredData.filter((character, idx) => idx >= 0 && idx < 20)
+    });
+  }
+  loadFromD() {
+    this.setState({
+      tab: filteredData.filter((character, idx) => idx > 152 && idx < 173),
+      elementMax: 173
+    });
+  }
+
+  loadFromI() {
+    this.setState({
+      tab: filteredData.filter((character, idx) => idx > 263 && idx < 284),
+      elementMax: 284
+    });
+  }
+
+  loadFromS() {
+    this.setState({
+      tab: filteredData.filter((character, idx) => idx > 430 && idx < 451),
+      elementMax: 451
+    });
+  }
+
   render() {
     return (
       <div className="indexx">
-      <NavBarHero />
+        <NavBarHero />
+        <div className="indexFilter">
+          <p onClick={() => this.loadFromC()}>All of them</p>
+          <p onClick={() => this.loadFromD()}>From D</p>
+          <p onClick={() => this.loadFromI()}>From I</p>
+          <p onClick={() => this.loadFromS()}>From S</p>
+        </div>
         <Cards characters={this.state.tab} />
         <button
           onClick={() => {

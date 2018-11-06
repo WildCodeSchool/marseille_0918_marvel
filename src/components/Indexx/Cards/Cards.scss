@@ -1,20 +1,32 @@
-// QUAND J'AI VOULU TRANSFERER TOUS LES FICHIERS DU GITHUB TEST,
-// L'ANIMATION NE FONCTIONNAIT PAS CORRECTEMENT
-// AU LIEU DE FAIRE UN FLIP NORMAL CA COUPAIT LA CARTE EN DEUX
-// ET ÇA TOURNAIT ENSUITE... UN TRUC CHELOU ET PAS BEAU...
-// J'AI PAS VRAIMENT COMPRIS OU ETAIT LE PB
-// ET ÇA A FINI PAR MARCHER QUAND J'AI MIS EN COMMENTAIRE
-// transform-style: preserve-3d;
-// A VOIR OU J'AI MERDE...
-
-
-
 .indexx {
   text-align: center;
   .Navbar {
     background-color: #222;
     position: relative;
     margin-bottom: 20px;
+  }
+  .indexFilter {
+    display: flex;
+    justify-content: center;
+    p {
+      // text-transform: uppercase;
+      padding: 1% 2%;
+      margin: 2%;
+      font-size: 2vw;
+      background-color: #222;
+      color: #f3f3f3;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+      outline: none;
+      border: 2px solid #222;
+
+      &:hover {
+        background-color: #f28f18;
+        box-sizing: content-box;
+      }
+    }
   }
 
   .link {
@@ -36,8 +48,8 @@
 
     &:hover {
       background-color: #f28f18;
-      
-      box-sizing: content-box
+
+      box-sizing: content-box;
     }
   }
 
@@ -48,7 +60,6 @@
     grid-row-gap: 35px;
     justify-items: center;
     align-items: center;
-    
 
     .card {
       /* grid-column:1;
@@ -57,13 +68,8 @@
       align-self: center;
       width: 300px;
       height: 400px;
-      
 
       // transform-style: preserve-3d;
-
-      // après avoir mis en commentaire la ligne ci-dessus j'ai du rajouter
-      // les deux lignes ci-dessous pour que le derrière de l'image ne soit
-      // pas blanc... à revoir j'imagine.
 
       background-color: transparent;
       border: none;
@@ -117,7 +123,6 @@
           color: #fff;
           font-weight: 700;
           font-family: Bangers, cursive;
-          
 
           span {
             color: #a7a7a7;
@@ -137,7 +142,6 @@
     }
   }
 }
-
 
 /** **************** INDEXX MEDIA QUERIES ***************** **/
 
@@ -162,8 +166,15 @@
 
 @media (max-width: 887px) and (min-width: 577px) {
   .indexx {
+    .indexFilter {
+      p {
+        padding: 1% 2%;
+        margin: 2.5%;
+        font-size: 3vw;
+      }
+    }
     .cards-container {
-      grid-template-columns: 1fr 1fr ;
+      grid-template-columns: 1fr 1fr;
 
       .card {
         width: 275px;
@@ -179,10 +190,17 @@
   }
 }
 
-@media  (max-width: 576px) {
+@media (max-width: 576px) {
   .indexx {
+    .indexFilter {
+      p {
+        padding: 1% 2%;
+        margin: 2%;
+        font-size: 3vw;
+      }
+    }
     .cards-container {
-      grid-template-columns: 1fr ;
+      grid-template-columns: 1fr;
 
       .card {
         width: 75vw;

@@ -1,294 +1,294 @@
-@import '../../Variables.scss';
-
-.bod {
-  margin: 0;
-  padding: 0;
-  font-family: $font-PT, sans-serif;
-
-  .menu-smartphone {
-    display: none;
-  }
-
-  ul {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background-color: #ccc;
-    margin: 0;
-    padding: 0;
-
-    li {
-      list-style: none;
-      position: relative;
-      width: 5%;
-      height: 100%;
-      border-right: 1px solid #000;
-      float: left;
-      box-sizing: border-box;
-      text-align: center;
-      transition: 0.5s;
-      overflow: hidden;
-    }
-    li:hover {
-      cursor: pointer;
-    }
-
-      li:nth-child(1) {
-        	background-position: center;
-        	background-size: cover;
-          width: 55%;
-          z-index: 1;
-
-          .content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0,0,0,.8);
-            box-sizing: border-box;
-            color: #fff;
-            opacity: 1;
-            transition: 0.5s;
-          }
-      }
-
-      li:nth-child(2) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(3) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(4) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(5) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(6) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(7) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(8) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(9) {
-      	background-position: center;
-      	background-size: cover;
-      }
-
-      li:nth-child(10) {
-      	background-position: center;
-      	background-size: cover;
-      }
-      li {
-          h3 {
-            color: #f3f3f3;
-            font-size: 1.5em;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.44);
-            padding: 3px;
-            border-radius: 2px;
-            display: inline-block;
-
-            span {
-              font-style: italic;
-              font-size: 0.7em;
-            }
-          }
-
-          .content {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            box-sizing: border-box;
-            color: #fff;
-            opacity: 0;
-            transition: 0.5s;
-
-            h2 {
-              margin: 2.5%;
-            }
-          }
-        }
-      }
-        .fa-undo {
-          display: block;
-          z-index: 9;
-          position: relative;
-          // top: 94vh;
-          padding: 1%;
-          color: $color-yellow;
-          // background-color: $color-white;
-          // width: 20vh;
-
-          //***LET'S TRY SOMETHING***
-          top: 92vh;
-          left: 1vw;
-          width: 7vh;
-          height: 7vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: solid 2px $color-yellow;
-          border-radius: 5px;
-          background-color: black;
-        }
-      
-      
-    }
-/** **************************** Responsive smartphones **************************** **/
-@media (max-width: 576px) {
-
-  .bod {
-    .menu-smartphone {
-      display: block;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      width: 100%;
-      height: 20vh;
-      margin: 15px 0 14%;
-
-        .num{
-          text-align: center;
-          background-color: $color-yellow;
-          color: #222;
-          font-size: 1.5em;
-          border-radius: 9px;
-          border: 2px solid #F3F3F3;
-          line-height: 70px;
-          margin: 3px;
-
-            span{
-              font-size: 0.6em;
-              font-style: italic;
-            }
-        }
-    }
-
-    ul {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-        li {
-          list-style: none;
-          width: 100%;
-          height:100%;
-          float: none;
-
-            h3{
-              display: none;
-            }
-            .content{
-              transition: 0.5s;
-            }
-        }
-
-        li:hover {
-          cursor: default;
-        }
-
-        li:nth-child(1){
-          width: 100%;
-          height: 400px;
-          background-position: center;
-          display: block;
-        }
-
-        li:nth-child(2) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(3) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(4) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(5) {
-          width: 100%;
-          height: 400px;
-        	display: none;
-          background-position: center;
-        }
-
-        li:nth-child(6) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(7) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(8) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(9) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-
-        li:nth-child(10) {
-          width: 100%;
-          height: 400px;
-          display: none;
-          background-position: center;
-        }
-    }
-    .fa-undo {
-        font-size: 3vh;
-        padding: 1%;
-        margin: 15px auto;
-        width: 7vh;
-        height: 7vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        top: 0;
-        left: 0;
-      }
-}
-}
+// @import '../../Variables.scss';
+//
+// .bod {
+//   margin: 0;
+//   padding: 0;
+//   font-family: $font-PT, sans-serif;
+//
+//   .menu-smartphone {
+//     display: none;
+//   }
+//
+//   ul {
+//     position: absolute;
+//     width: 100%;
+//     height: 100vh;
+//     background-color: #ccc;
+//     margin: 0;
+//     padding: 0;
+//
+//     li {
+//       list-style: none;
+//       position: relative;
+//       width: 5%;
+//       height: 100%;
+//       border-right: 1px solid #000;
+//       float: left;
+//       box-sizing: border-box;
+//       text-align: center;
+//       transition: 0.5s;
+//       overflow: hidden;
+//     }
+//     li:hover {
+//       cursor: pointer;
+//     }
+//
+//       li:nth-child(1) {
+//         	background-position: center;
+//         	background-size: cover;
+//           width: 55%;
+//           z-index: 1;
+//
+//           .content {
+//             position: absolute;
+//             bottom: 0;
+//             left: 0;
+//             width: 100%;
+//             background: rgba(0,0,0,.8);
+//             box-sizing: border-box;
+//             color: #fff;
+//             opacity: 1;
+//             transition: 0.5s;
+//           }
+//       }
+//
+//       li:nth-child(2) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(3) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(4) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(5) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(6) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(7) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(8) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(9) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//
+//       li:nth-child(10) {
+//       	background-position: center;
+//       	background-size: cover;
+//       }
+//       li {
+//           h3 {
+//             color: #f3f3f3;
+//             font-size: 1.5em;
+//             text-align: center;
+//             background: rgba(0, 0, 0, 0.44);
+//             padding: 3px;
+//             border-radius: 2px;
+//             display: inline-block;
+//
+//             span {
+//               font-style: italic;
+//               font-size: 0.7em;
+//             }
+//           }
+//
+//           .content {
+//             position: absolute;
+//             bottom: -100%;
+//             left: 0;
+//             width: 100%;
+//             background: rgba(0, 0, 0, 0.8);
+//             box-sizing: border-box;
+//             color: #fff;
+//             opacity: 0;
+//             transition: 0.5s;
+//
+//             h2 {
+//               margin: 2.5%;
+//             }
+//           }
+//         }
+//       }
+//         .fa-undo {
+//           display: block;
+//           z-index: 9;
+//           position: relative;
+//           // top: 94vh;
+//           padding: 1%;
+//           color: $color-yellow;
+//           // background-color: $color-white;
+//           // width: 20vh;
+//
+//           //***LET'S TRY SOMETHING***
+//           top: 92vh;
+//           left: 1vw;
+//           width: 7vh;
+//           height: 7vh;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           border: solid 2px $color-yellow;
+//           border-radius: 5px;
+//           background-color: black;
+//         }
+//
+//
+//     }
+// /** **************************** Responsive smartphones **************************** **/
+// @media (max-width: 576px) {
+//
+//   .bod {
+//     .menu-smartphone {
+//       display: block;
+//       display: grid;
+//       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+//       grid-template-rows: 1fr 1fr;
+//       width: 100%;
+//       height: 20vh;
+//       margin: 15px 0 14%;
+//
+//         .num{
+//           text-align: center;
+//           background-color: $color-yellow;
+//           color: #222;
+//           font-size: 1.5em;
+//           border-radius: 9px;
+//           border: 2px solid #F3F3F3;
+//           line-height: 70px;
+//           margin: 3px;
+//
+//             span{
+//               font-size: 0.6em;
+//               font-style: italic;
+//             }
+//         }
+//     }
+//
+//     ul {
+//       position: relative;
+//       width: 100%;
+//       height: 100%;
+//
+//         li {
+//           list-style: none;
+//           width: 100%;
+//           height:100%;
+//           float: none;
+//
+//             h3{
+//               display: none;
+//             }
+//             .content{
+//               transition: 0.5s;
+//             }
+//         }
+//
+//         li:hover {
+//           cursor: default;
+//         }
+//
+//         li:nth-child(1){
+//           width: 100%;
+//           height: 400px;
+//           background-position: center;
+//           display: block;
+//         }
+//
+//         li:nth-child(2) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(3) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(4) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(5) {
+//           width: 100%;
+//           height: 400px;
+//         	display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(6) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(7) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(8) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(9) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//
+//         li:nth-child(10) {
+//           width: 100%;
+//           height: 400px;
+//           display: none;
+//           background-position: center;
+//         }
+//     }
+//     .fa-undo {
+//         font-size: 3vh;
+//         padding: 1%;
+//         margin: 15px auto;
+//         width: 7vh;
+//         height: 7vh;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 5px;
+//         top: 0;
+//         left: 0;
+//       }
+// }
+// }

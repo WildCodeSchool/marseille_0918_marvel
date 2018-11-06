@@ -23,7 +23,7 @@ export default class Hero extends Component {
   constructor(props) {
     super(props);
 
-    //WITH THE NEXT FEW LINES WE FIND THE CURRENT HERO DISPLAYED ID IN THE FILTEREDDATA.JSON FILE
+    //WIT THE NEXT FEW LINES WE FIND THE CURRENT HERO DISPLAYED ID IN THE FILTEREDDATA.JSON FILE
     //WHICH WILL ALLOW US TO FIND WHICH ONE IS THE NEXT ONE OR THE PREVIOUS ONE
     let currentfilteredDataID = 500;
     // I CHOOSE A RANDOM VALID currentfilteredDataID JUST TO PREVENT AN ERROR PAGE IF THE CLIENT WRITE AN ID NUMBER INVALID IN THE URL
@@ -33,6 +33,7 @@ export default class Hero extends Component {
         return (currentfilteredDataID = idx);
       }
     });
+    console.log(filteredData);
 
     let previousId;
     if (currentfilteredDataID === 0) {

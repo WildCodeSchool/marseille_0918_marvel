@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './TopWomen.scss';
 import '../../Variables.scss';
 import {NavLink} from 'react-router-dom';
 
@@ -83,6 +82,7 @@ class TopWomen extends Component{
     nuSiblings.map( (sibling) => {
         sibling.style.background = "#f28f18";
         lis[i].style.width = "100%";
+        sibling.style.color = "#222222";
     })
         let contentSibling = sibling.lastElementChild;
         contentSibling.style.bottom = "-100%";
@@ -92,6 +92,7 @@ class TopWomen extends Component{
             content.style.opacity = "1";
             content.style.transitionDelay= "0.5s";
             num[i].style.background= "#113971";
+            num[i].style.color= "#f3f3f3";
     })
     let hover = lis[i].addEventListener('click', (e) => {
         lis[i].style.width = "100%";
