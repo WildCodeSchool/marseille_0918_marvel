@@ -25,7 +25,7 @@ export default class Hero extends Component {
 
     //WIT THE NEXT FEW LINES WE FIND THE CURRENT HERO DISPLAYED ID IN THE FILTEREDDATA.JSON FILE
     //WHICH WILL ALLOW US TO FIND WHICH ONE IS THE NEXT ONE OR THE PREVIOUS ONE
-    let currentfilteredDataID = 500;
+    let currentfilteredDataID = 8;
     // I CHOOSE A RANDOM VALID currentfilteredDataID JUST TO PREVENT AN ERROR PAGE IF THE CLIENT WRITE AN ID NUMBER INVALID IN THE URL
     // FOR EXAMPLE THERE IS NO ID 16 AVAILABLE, BUT IF WE WRITE  http://localhost:3000/character/16 WE WILL SEE THANOS
     filteredData.filter((element, idx) => {

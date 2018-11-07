@@ -62,7 +62,7 @@
     margin-top: 45px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 35% 60% 5%;
+    grid-template-rows: 40% 55% 4%;
     justify-content: center;
 
     .arrows {
@@ -223,7 +223,7 @@
 @media only screen and (min-width: 576px) {
   .card-container {
     padding-top: 12vw;
-    
+
     .header-hero {
       h2 {
         font-size: 6em;
@@ -232,7 +232,7 @@
     .card-grid-container {
       grid-template-columns: 15% minmax(265px, 1fr) 1fr 15%;
       grid-template-rows: 1fr;
-      
+
       .arrows {
         font-size: 3em;
         grid-row: 1;
@@ -250,7 +250,6 @@
       .rightSide {
         grid-column: 3 / 4;
         grid-row: 1;
-
       }
 
       .arrows.arrowRight {
