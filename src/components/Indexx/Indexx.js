@@ -33,22 +33,22 @@ class Indexx extends Component {
   }
   loadFromD() {
     this.setState({
-      tab: filteredData.filter((character, idx) => idx > 152 && idx < 173),
-      elementMax: 173
+      tab: filteredData.filter((character, idx) => idx > 151 && idx < 172),
+      elementMax: 172
     });
   }
 
   loadFromI() {
     this.setState({
-      tab: filteredData.filter((character, idx) => idx > 263 && idx < 284),
-      elementMax: 284
+      tab: filteredData.filter((character, idx) => idx > 260 && idx < 281),
+      elementMax: 281
     });
   }
 
   loadFromS() {
     this.setState({
-      tab: filteredData.filter((character, idx) => idx > 430 && idx < 451),
-      elementMax: 451
+      tab: filteredData.filter((character, idx) => idx > 421 && idx < 442),
+      elementMax: 442
     });
   }
 
