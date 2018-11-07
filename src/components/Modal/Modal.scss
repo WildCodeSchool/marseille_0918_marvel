@@ -1,0 +1,211 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import '../Variables.scss';
+
+//////// MODAL ///////
+
+.Search {
+    cursor: pointer;
+}
+
+.SearchModal {
+    z-index: 1;
+}
+
+.Close {
+    height:5vh;
+}
+
+.ButtonClose {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.ListSearch {
+    ul {
+        list-style: none;    
+        color: $color-black;
+        
+    }
+    
+    a {
+        font-family: $font-PT;
+        text-decoration: none;
+        color: $color-black;
+    }
+
+    a:hover {
+        text-decoration: none;
+        background-color: rgba(34, 34, 34, 0.2);
+        border-radius: 5px;
+        display: block;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -10%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 4vw
+        }
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 2.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }.ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -4%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 2vw
+        }
+        
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 1.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 46% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -4%;
+        
+        li{
+            margin-top: 2%;
+            font-weight: bold;
+            font-size: 2vw
+        }
+        
+    }
+    .FullName {
+        font-style: italic;
+        font-size: 1.5vw;
+    }
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 46% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 48% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 2%;
+        margin-left: -2%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 52% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .ListSearch {
+        list-style: none;
+        margin-top: 1%;
+        margin-left: -1%;
+    
+        li{
+            margin-top: 0.5%;
+            font-weight: bold;
+            font-size: 1.2vw
+        }
+    }
+    
+    .FullName {
+        font-style: italic;
+        font-size: 0.9vw;
+    }
+
+    .ReactModal__Content--after-open{
+        background: none !important;
+        border: none !important;
+        top: 50% !important;
+    }
+    .ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+

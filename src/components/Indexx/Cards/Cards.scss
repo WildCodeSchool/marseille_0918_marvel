@@ -1,0 +1,224 @@
+///// IMPORT VARIABLES SCSS /////
+
+@import "../../Variables.scss";
+
+.indexx {
+  text-align: center;
+  .Navbar {
+    background-color: #222;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .indexFilter {
+    display: flex;
+    justify-content: center;
+    p {
+      // text-transform: uppercase;
+      padding: 10px 15px;
+      margin: 25px;
+      font-size: 1.5vw;
+      font-family: $font-PT;
+      background-color: #ccc;
+      color: #222;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+      box-shadow: #bbb 3px 3px 10px;
+
+      &:hover {
+        background-color: #f28f18;
+        box-sizing: content-box;
+      }
+    }
+  }
+
+  .link {
+    text-decoration: none;
+  }
+  button,
+  .link {
+    text-transform: uppercase;
+    padding: 20px 15px;
+    margin: 30px;
+    background-color: #222;
+    color: #f3f3f3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    outline: none;
+    border: 2px solid #222;
+
+    &:hover {
+      background-color: #f28f18;
+
+      box-sizing: content-box;
+    }
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-column-gap: 20px;
+    grid-row-gap: 35px;
+    justify-items: center;
+    align-items: center;
+
+    .card {
+      /* grid-column:1;
+				grid-row: 1; */
+      justify-self: center;
+      align-self: center;
+      width: 300px;
+      height: 400px;
+
+      // transform-style: preserve-3d;
+
+      background-color: transparent;
+      border: none;
+
+      perspective: 600px;
+      transition: 0.5s;
+
+      .front {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transition: 0.5s;
+
+        img {
+          width: 300px;
+          height: 400px;
+        }
+      }
+
+      &:hover .front {
+        transform: rotateX(-180deg);
+      }
+
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateX(180deg);
+        width: 100%;
+        height: 100%;
+        background: #000;
+        backface-visibility: hidden;
+        transition: 0.5s;
+
+        .details {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+          box-sizing: border-box;
+          transform: translateY(-50%);
+        }
+
+        h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 28px;
+          color: #fff;
+          font-weight: 700;
+          font-family: Bangers, cursive;
+
+          span {
+            color: #a7a7a7;
+            font-size: 24px;
+            font-family: "PT Sans Narrow", sans-serif;
+          }
+        }
+      }
+
+      &:hover .back {
+        transform: rotateX(0deg);
+      }
+
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/** **************** INDEXX MEDIA QUERIES ***************** **/
+
+@media (max-width: 1290px) and (min-width: 888px) {
+  .indexx {
+    .indexFilter {
+      p {
+        margin: 25px 20px;
+        font-size: 2vw;
+      }
+    }
+    .cards-container {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .card {
+        width: 275px;
+        height: 375px;
+        .front {
+          img {
+            width: 275px;
+            height: 375px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 887px) and (min-width: 577px) {
+  .indexx {
+    .indexFilter {
+      p {
+        font-size: 2.5vw;
+      }
+    }
+    .cards-container {
+      grid-template-columns: 1fr 1fr;
+
+      .card {
+        width: 275px;
+        height: 375px;
+        .front {
+          img {
+            width: 275px;
+            height: 375px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .indexx {
+    .indexFilter {
+      p {
+        padding: 5px 10px;
+        margin: 20px 5px;
+        font-size: 3.5vw;
+      }
+    }
+    .cards-container {
+      grid-template-columns: 1fr;
+
+      .card {
+        width: 75vw;
+        height: auto;
+        .front {
+          img {
+            width: 75vw;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
