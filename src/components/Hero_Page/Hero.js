@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
-
-import "./Hero.scss";
 import filteredData from "../Indexx/superFiltered.json";
+import "./Hero.scss";
 
 import CardIdentity from "./CardIdentity";
 import CardSuperId from "./CardSuperId";
@@ -33,7 +31,7 @@ export default class Hero extends Component {
         return (currentfilteredDataID = idx);
       }
     });
-    console.log(filteredData);
+    
 
     let previousId;
     if (currentfilteredDataID === 0) {
@@ -67,26 +65,8 @@ export default class Hero extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log("component did mount");
-    //   console.log(filteredData);
-    //   axios
-    //     .get(
-    //       `http://www.superheroapi.com/api.php/10217009184163084/${
-    //         this.props.match.params.id
-    //       }`
-    //     )
-    //     .then(response => {
-    //       const heroData = response.data;
-    //       this.setState({
-    //         hero: heroData,
-    //         currentID: this.state.hero.id
-    //       });
-    //     });
-  }
 
   render() {
-    // if (this.state.hero.name) {
     return (
       <React.Fragment>
         <NavBarHero />
@@ -183,7 +163,5 @@ export default class Hero extends Component {
         <Footer />
       </React.Fragment>
     );
-    // }
-    // return null;
   }
 }

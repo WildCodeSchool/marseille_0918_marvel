@@ -33,7 +33,7 @@ class TopBiggest extends Component{
 
         for(let i = 0; i < lis.length; i++) {
 
-            let hover = lis[i].addEventListener('click', (e) => {
+            lis[i].addEventListener('click', (e) => {
                 lis[i].style.width = "55%";
 
 
@@ -68,7 +68,7 @@ class TopBiggest extends Component{
 
     for(let i = 0; i < lis.length; i++ ){
 
-    let menuWork = num[i].addEventListener('click', (e) =>{
+    num[i].addEventListener('click', (e) =>{
         lis[i].style.display = "block";
         lis[i].style.width = "100%";
 
@@ -93,7 +93,7 @@ class TopBiggest extends Component{
             num[i].style.background= "#113971";
             num[i].style.color= "#f3f3f3";
     })
-    let hover = lis[i].addEventListener('click', (e) => {
+    lis[i].addEventListener('click', (e) => {
         lis[i].style.width = "100%";
 
     let liSiblings = getSiblings(lis[i]);

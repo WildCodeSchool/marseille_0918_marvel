@@ -26,21 +26,32 @@ export default class CardAffiliation extends Component {
   }
 
   render() {
+  
     let groups;
     let relatives;
     let card;
     let separator;
+    const {
+      props: {
+        group,
+        hideGivenList,
+      },
+      state: {
+        showMoreAffiliation,
+        showMoreRelative
+      }
+    } = this;
 
     // * * * * * * * * * *   LET'S DEFINE GROUPS (AFFILIATION GROUP):   * * * * * * * * * * //
 
-    if (this.props.group !== "-") {
+    if (group !== "-") {
       // * * * * * IF THERE IS 5 OR LESS GROUP AFFILIATIONS EACH OF THEM APPEAR IN A <P> * * * * * //
 
-      if (this.props.group.split(",").length < 5) {
+      if (group.split(",").length < 5) {
         groups = (
           <li>
             <strong className="cardDetailSubTitle">Affiliation:</strong>
-            {this.props.group.split(",").map((group, idx) => (
+            {group.split(",").map((group, idx) => (
               <p className="cardApiInfo" key={idx}>
                 {group}
               </p>
@@ -55,7 +66,7 @@ export default class CardAffiliation extends Component {
             <strong className="cardDetailSubTitle">Affiliation:</strong>
 
             {/*   * * * * * 4 OF THEM EACH APPEAR IN A <P>  * * * * *   */}
-            {this.props.group.split(",").map(
+            {group.split(",").map(
               (group, idx) =>
                 idx < 4 && (
                   <p className="cardApiInfo" key={idx}>
@@ -65,10 +76,10 @@ export default class CardAffiliation extends Component {
             )}
 
             {/*   * * * * * AND THEN WE CHECK IF showMoreAffiliation IS TRUE OR FALSE:  * * * * *   */}
-            {this.state.showMoreAffiliation ? (
+            {showMoreAffiliation ? (
               // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
               <React.Fragment>
-                {this.props.group.split(",").map(
+                {group.split(",").map(
                   (group, idx) =>
                     idx > 3 &&
                     idx < 10 && (
@@ -148,7 +159,7 @@ export default class CardAffiliation extends Component {
                 )
             )}
             {/*   * * * * * AND THEN WE CHECK IF showMoreAffiliation IS TRUE OR FALSE:  * * * * *   */}
-            {this.state.showMoreRelative ? (
+            {showMoreRelative ? (
               // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
               <React.Fragment>
                 {this.props.relatives.split(separator).map(
@@ -187,7 +198,7 @@ export default class CardAffiliation extends Component {
     if (groups || relatives) {
       card = (
         <div
-          onClick={e => this.props.hideGivenList("affiliationList", e)}
+          onClick={e => hideGivenList("affiliationList", e)}
           className="idCard"
         >
           <h4>Affiliation Card</h4>

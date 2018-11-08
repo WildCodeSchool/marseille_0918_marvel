@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link, Redirect } from "react-router-dom";
 import filteredData from "../Indexx/superFiltered.json";
-// import axios from "axios";
 import "./Search.scss";
 
 class Search extends Component {
@@ -80,8 +79,6 @@ class Search extends Component {
   render() {
     // BIND STATES PROPS AND FUNCTIONS
     const {
-      startRequest,
-      minInput,
       onChange,
       onClick,
       onKeyDown,

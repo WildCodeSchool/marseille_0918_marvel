@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+import React from "react";
 import Countdown from "react-countdown-now";
 
 // Random component
@@ -118,17 +117,13 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
   }
 };
 
-class RealCountown extends Component {
-  render() {
-    return (
-      <div className="clockContainer">
-        <Countdown
-          date={new Date("Dec 21, 2018 00:00:00")}
-          renderer={renderer}
-        />
-      </div>
-    );
-  }
-}
+const RealCountown = () => (
+  <div className="clockContainer">
+    <Countdown
+      date={new Date("Dec 21, 2018 00:00:00")}
+      renderer={renderer}
+    />
+  </div>
+)
 
 export default RealCountown;

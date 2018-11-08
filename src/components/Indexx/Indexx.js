@@ -5,15 +5,13 @@ import { NavLink } from "react-router-dom";
 import NavBarHero from "../NavBarHero/NavBarHero";
 
 class Indexx extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      elementMax: 20,
-      tab: filteredData.filter((character, idx) => idx < 20)
-    };
-  }
+  state = {
+    elementMax: 20,
+    tab: filteredData.filter((character, idx) => idx < 20)
+  };
+  
 
-  loadMore() {
+  loadMore = () => {
     this.setState({ elementMax: this.state.elementMax + 20 });
     let newData = filteredData.filter(
       (character, idx) =>
@@ -26,26 +24,26 @@ class Indexx extends Component {
     });
   }
 
-  loadFromC() {
+  loadFromC = () => {
     this.setState({
       tab: filteredData.filter((character, idx) => idx >= 0 && idx < 20)
     });
   }
-  loadFromD() {
+  loadFromD = () => {
     this.setState({
       tab: filteredData.filter((character, idx) => idx > 151 && idx < 172),
       elementMax: 172
     });
   }
 
-  loadFromI() {
+  loadFromI = () => {
     this.setState({
       tab: filteredData.filter((character, idx) => idx > 260 && idx < 281),
       elementMax: 281
     });
   }
 
-  loadFromS() {
+  loadFromS = () => {
     this.setState({
       tab: filteredData.filter((character, idx) => idx > 421 && idx < 442),
       elementMax: 442
@@ -53,24 +51,37 @@ class Indexx extends Component {
   }
 
   render() {
+
+    const {
+      loadFromC,
+      loadFromD,
+      loadFromI,
+      loadFromS,
+      loadMore,
+      state:{
+        tab
+      }
+    } = this;
+
     return (
+      
       <div className="indexx">
         <NavBarHero />
         <div className="indexFilter">
-          <p onClick={() => this.loadFromC()}>All of them</p>
-          <p onClick={() => this.loadFromD()}>From D</p>
-          <p onClick={() => this.loadFromI()}>From I</p>
-          <p onClick={() => this.loadFromS()}>From S</p>
+          <p onClick={() => loadFromC()}>All of them</p>
+          <p onClick={() => loadFromD()}>From D</p>
+          <p onClick={() => loadFromI()}>From I</p>
+          <p onClick={() => loadFromS()}>From S</p>
         </div>
-        <Cards characters={this.state.tab} />
+        <Cards characters={tab} />
         <button
           onClick={() => {
-            this.loadMore();
+            loadMore();
           }}
         >
           Load More
         </button>
-        <NavLink className="link" to="/" onClick="/">
+        <NavLink className="link" to="/">
           back home{" "}
         </NavLink>
       </div>

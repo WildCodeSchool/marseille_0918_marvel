@@ -26,62 +26,71 @@ export default class CardIdentity extends Component {
   }
 
   render() {
-    let fullName;
-    let race;
+    let fullNames;
+    let races;
     let occupations;
     let locations;
-    let gender;
+    let genders;
     let card;
+    const {
+      props: {
+        fullName,
+        gender,
+        race,
+        occupation,
+        location
+      }
+    } = this;
 
     // * * * * * * * * * *   LET'S DEFINE FULLNAME:   * * * * * * * * * * //
 
-    if (this.props.fullName !== "" && this.props.fullName !== "-") {
-      fullName = (
+    if (fullName !== "" && fullName !== "-") {
+      fullNames = (
         <li>
           <strong className="cardDetailSubTitle">Full-name:</strong>{" "}
-          {this.props.fullName}
+          {fullName}
         </li>
       );
     }
 
     // * * * * * * * * * *   LET'S DEFINE GENDER:   * * * * * * * * * * //
-    if (this.props.gender !== "-") {
-      gender = (
+    if (gender !== "-") {
+      genders = (
         <li>
           <strong className="cardDetailSubTitle">Gender:</strong>{" "}
-          {this.props.gender}
+          {gender}
         </li>
       );
     }
 
     // * * * * * * * * * *   LET'S DEFINE RACE:   * * * * * * * * * * //
-    if (this.props.race !== "null") {
-      race = (
+    if (race !== "null") {
+      races = (
         <li>
           <strong className="cardDetailSubTitle">Race:</strong>{" "}
-          {this.props.race}
+          {race}
         </li>
       );
     }
 
     // * * * * * * * * * *   LET'S DEFINE OCCUPATION:   * * * * * * * * * * //
-    if (this.props.occupation !== "-" && this.props.occupation !== "Unknown") {
+    if (occupation !== "-" && occupation !== "Unknown") {
       occupations = (
         <li>
           <strong className="cardDetailSubTitle">Occupation:</strong>{" "}
-          {this.props.occupation}
+          {occupation}
         </li>
       );
     }
 
-    if (this.props.occupation !== "-") {
+    if (occupation !== "-") {
       // * * * * * IF THERE IS 5 OR LESS OCCUPATIONS EACH OF THEM APPEARS IN A <P> * * * * * //
 
-      if (this.props.occupation.split(",").length < 5) {
+      if (occupation.split(",").length < 5) {
         occupations = (
           <li>
             <strong className="cardDetailSubTitle">Occupations:</strong>
-            {this.props.occupation.split(",").map((occupation, idx) => (
+            {occupation.split(",").map((occupation, idx) => (
               <p className="cardApiInfo" key={idx}>
                 {occupation}
               </p>
@@ -96,7 +105,7 @@ export default class CardIdentity extends Component {
             <strong className="cardDetailSubTitle">Occupations:</strong>
 
             {/*   * * * * * 4 OF THEM EACH APPEARS IN A <P>  * * * * *   */}
-            {this.props.occupation.split(",").map(
+            {occupation.split(",").map(
               (occupation, idx) =>
                 idx < 4 && (
                   <p className="cardApiInfo" key={idx}>
@@ -109,7 +118,7 @@ export default class CardIdentity extends Component {
             {this.state.showMoreOccupation ? (
               // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
               <React.Fragment>
-                {this.props.occupation.split(",").map(
+                {occupation.split(",").map(
                   (occupation, idx) =>
                     idx > 3 &&
                     idx < 10 && (
@@ -144,14 +153,14 @@ export default class CardIdentity extends Component {
     }
 
     // * * * * * * * * * *   LET'S DEFINE LOCATION:   * * * * * * * * * * //
-    if (this.props.location !== "-") {
+    if (location !== "-") {
       // * * * * * IF THERE IS 5 OR LESS LOCATIONS EACH OF THEM APPEARS IN A <P> * * * * * //
 
-      if (this.props.location.split(";").length < 5) {
+      if (location.split(";").length < 5) {
         locations = (
           <li>
             <strong className="cardDetailSubTitle">Locations:</strong>
-            {this.props.location.split(";").map((location, idx) => (
+            {location.split(";").map((location, idx) => (
               <p className="cardApiInfo" key={idx}>
                 {location}
               </p>
@@ -166,7 +175,7 @@ export default class CardIdentity extends Component {
             <strong className="cardDetailSubTitle">Locations:</strong>
 
             {/*   * * * * * 4 OF THEM EACH APPEARS IN A <P>  * * * * *   */}
-            {this.props.location.split(";").map(
+            {location.split(";").map(
               (location, idx) =>
                 idx < 4 && (
                   <p className="cardApiInfo" key={idx}>
@@ -179,7 +188,7 @@ export default class CardIdentity extends Component {
             {this.state.showMoreLocation ? (
               // * * * * *  IF IT IS TRUE, WE SEE ON SCREEN THE NEXT ONES UP THE 10TH IN <P>s  * * * * * //
               <React.Fragment>
-                {this.props.location.split(";").map(
+                {location.split(";").map(
                   (location, idx) =>
                     idx > 3 &&
                     idx < 10 && (

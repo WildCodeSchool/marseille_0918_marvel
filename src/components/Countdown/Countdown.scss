@@ -3,7 +3,6 @@
   margin: 15px 0;
   position: relative;
 
-  
   h2 {
     font-family: "Bangers", cursive;
     font-size: 3.5em;
@@ -38,14 +37,7 @@
   }
 
   .filmTitle {
-    // font-size: 3em;
     margin-top: 5px;
-    // color: #113971;
-    // text-transform: uppercase;
-    // font-weight: 600;
-    // text-align: center;
-    // font-family: 'PT Sans Narrow', sans-serif;
-
       img {
         height: 100px;
         width: auto;
@@ -64,7 +56,6 @@
     display: grid;
     grid-template-rows: 2fr 1fr;
     grid-template-columns: 1fr;
-    // à virer pour revenir comme c'était avant
     background-color: none;
 
     .youtube {
@@ -72,7 +63,6 @@
       grid-column-start: 1;
       justify-self: center;
       width: 80%;
-      // à virer pour revenir comme c'était avant
       background-color: black;
       margin-bottom: 44px;
 
@@ -81,12 +71,14 @@
         margin: auto;
       }
     }
+
     .clockContainer {
       align-self: center;
       justify-content: center;
       grid-row-start: 2;
       grid-column-start: 1;
       color: #222;
+
       .clock {
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -95,6 +87,7 @@
         font-size: 2em;
         width: 53%;
         margin: auto;
+
         .spanTop {
           transform: scale(1, 3.5); /* W3C */
           -webkit-transform: scale(1, 3.5); /* Safari and Chrome */
@@ -158,7 +151,6 @@
     }
 
     .filmTitle {
-  
         img {
           height: 160px;
           width: auto;
@@ -174,8 +166,6 @@
       color: #f28F18;
     }
 
-
-
     .videoCountGrid {
       grid-template-rows: 1fr;
       grid-template-columns: 60% 40%;
@@ -185,16 +175,19 @@
         grid-row-start: 1;
         grid-column-start: 1;
       }
+
       .clockContainer {
         grid-row-start: 1;
         grid-column-start: 2;
-        // color: white;
+
         .clock {
           width: 60%;
+
           .spanTop {
             font-size: 3vw;
             letter-spacing: 10px;
           }
+
           .spanBottom {
             font-size: 1.5vw;
             letter-spacing: 3px;

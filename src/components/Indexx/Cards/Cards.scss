@@ -13,7 +13,6 @@
     display: flex;
     justify-content: center;
     p {
-      // text-transform: uppercase;
       padding: 10px 15px;
       margin: 25px;
       font-size: 1.5vw;
@@ -51,7 +50,6 @@
 
     &:hover {
       background-color: #f28f18;
-
       box-sizing: content-box;
     }
   }
@@ -59,24 +57,17 @@
   .cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    // grid-column-gap: 20px;
     grid-row-gap: 35px;
     justify-items: center;
     align-items: center;
 
     .card {
-      /* grid-column:1;
-				grid-row: 1; */
       justify-self: center;
       align-self: center;
       width: 300px;
       height: 400px;
-
-      // transform-style: preserve-3d;
-
       background-color: transparent;
       border: none;
-
       perspective: 600px;
       transition: 0.5s;
 
