@@ -123,7 +123,7 @@ class RealCountown extends Component {
     return (
       <div className="clockContainer">
         <Countdown
-          date={new Date("Dec 21, 2018 00:00:00")}
+          date={new Date("Mar 8, 2019 00:00:00")}
           renderer={renderer}
         />
       </div>

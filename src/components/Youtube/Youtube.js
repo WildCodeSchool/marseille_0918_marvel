@@ -12,7 +12,7 @@ class Video extends React.Component {
 
     return (
       <div className="youtube">
-        <YouTube videoId="WDkg3h8PCVU" opts={opts} onReady={this._onReady} />
+        <YouTube videoId="Z1BCujX3pw8" opts={opts} onReady={this._onReady} />
       </div>
     );
   }

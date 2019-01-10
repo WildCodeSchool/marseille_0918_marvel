@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Countdown.scss";
 import RealCountdown from "./RealCountdown";
 import Video from "../Youtube/Youtube";
-import Aquaman from './aquaman.png'
+import captainmarvel from './captainmarvel.png'
 
 class CountdownSection extends Component {
   render() {
@@ -11,9 +11,9 @@ class CountdownSection extends Component {
       <React.Fragment >
         <h2>COMING SOON</h2>
         <h3 className="filmTitle">
-          <img src={Aquaman}/>
+          <img src={captainmarvel}/>
         </h3>
-        <p className="dateOut">December 21, 2018</p>
+        <p className="dateOut">March 8, 2019</p>
         <div className="videoCountGrid">
           <Video />
           <RealCountdown />
